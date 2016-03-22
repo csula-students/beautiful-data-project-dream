@@ -4,6 +4,7 @@
 * [Syllabus](syllabus.md)
 * [Introduction](notes/introduction.md)
 * [Data Acquisition](notes/data_acquisition.md)
+   * Homework 1
 * [Data Storage](notes/data_storage.md)
 * [Data Analysis](notes/data_analysis.md)
 * [Data Visualization](notes/data_visualization.md)
