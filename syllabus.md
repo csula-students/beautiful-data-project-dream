@@ -16,10 +16,13 @@ Moreover, we expect students to spend large amount of time learning new tools an
 
 ## Logistic
 
-Instructors:
+Instructor:
 
   * Eric Liao <rcliao01@gmail.com>
-  * John Tran - *course assistance*
+
+Course assistance:
+
+  * John Tran
 
 Schedule:
 
