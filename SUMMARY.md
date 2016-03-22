@@ -1,7 +1,7 @@
 # Summary
 
 * [README.md](README.md)
-* [Syllabus](notes/homeworks/homework1.md)
+* [Syllabus](notes/homeworks/homework2.md)
 * [Introduction](notes/introduction.md)
 * [Data Acquisition](notes/data_acquisition.md)
    * Homework 1
