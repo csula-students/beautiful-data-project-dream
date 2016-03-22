@@ -8,6 +8,10 @@ Welcome to Data Science course again!
 * Introduction to Data Science
 * Set up development environment
 * Form a team
+* Create Github team repo
 
 ## Metrics
 
+* Github team repo
+* Data question
+* Pass unit tests
