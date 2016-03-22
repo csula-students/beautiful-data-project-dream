@@ -5,5 +5,5 @@
 * [Introduction](notes/introduction.md)
 * [Data Acquisition](notes/data_acquisition.md)
 * [Data Storage](notes/data_storage.md)
-* Data Analysis
+* [Data Analysis](notes/data_analysis.md)
 
