@@ -91,8 +91,8 @@ All parties involved will receive a grade of F for the course and be reported to
 
 The schedule below is tentative and is subject to change.
 
-| Week # [date] | Topic     | Notes 
-| --            | --        | -- 
+| Week # [date] | Topic     | Notes |
+| --- | --- | --- |
 | 1 [4/3]       | Introduction | Form a team, set up environment |
 | 2 [4/10]      | Data Acquisition | **Homework 1** & **Quiz 1** |
 | 3 [4/17]      | Data Storage | Install MongoDB |
