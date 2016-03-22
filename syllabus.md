@@ -19,7 +19,7 @@ Moreover, we expect students to spend large amount of time learning new tools an
 Instructors:
 
   * Eric Liao <rcliao01@gmail.com>
-  * John Tran
+  * John Tran - *course assistance*
 
 Schedule:
 
