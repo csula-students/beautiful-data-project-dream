@@ -2,5 +2,5 @@
 
 * [README.md](README.md)
 * [Syllabus](syllabus.md)
-* Introduction
+* [Introduction](notes/introduction.md)
 
