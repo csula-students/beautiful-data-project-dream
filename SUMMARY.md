@@ -8,5 +8,6 @@
 * [Data Storage](notes/data_storage.md)
    * Homework 2
 * [Data Analysis](notes/data_analysis.md)
+   * Homework 3
 * [Data Visualization](notes/data_visualization.md)
 
