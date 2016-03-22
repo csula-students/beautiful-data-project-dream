@@ -1,2 +1,2 @@
-# Syllabus
+# Homework 3
 
