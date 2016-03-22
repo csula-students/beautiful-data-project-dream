@@ -98,6 +98,6 @@ The schedule below is tentative and is subject to change.
 | 6 [5/8]       | Data Analysis | MongoDB MapReduce **Homework 3** |
 | 7 [5/15]      | Data Analysis | Install Python **Quiz 3** |
 | 8 [5/22]      | Data Analysis | Machine learning |
-| 9 [5/29]      | Data Visualization | **Quiz 4** |
-| 10 [6/5]      | Data Visualization | **Homework 4** |
-| Final [6/14]     | Launch date | Install Docker |
+| 9 [5/29]      | Data Visualization | JavaScript and D3 **Quiz 4** |
+| 10 [6/5]      | Data Visualization | Install Docker **Homework 4** |
+| Final [6/14]     | Launch date | Ready for demo! |
