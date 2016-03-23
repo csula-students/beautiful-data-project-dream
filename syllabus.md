@@ -4,15 +4,15 @@
 
 **Objectives**
 
-The primary goal for Data Science class is to collect, store, analyze and visualize data for answering third level question (holy grail of the data science). 
+The primary goal for Data Science class is to collect, store, analyze and visualize data for answering *the third order of knowledge*. 
 
-Students will be required to perform various programming parts in order to accomplish the final course project for reporting finding.
+Students will perform programming parts throughout the quarter to finish the final course project.
 
 **Expectations**
 
-We expect students to have strong Java programming background as the course programming will be built around Java. And some Python programming is required through out the course for Machine Learning.
+We expect students to have strong Java programming background with some Python programming experience.
 
-Moreover, we expect students to spend large amount of time learning new tools and implementing the project parts outside of course schedule.
+Moreover, we expect students to spend large amount of time learning new tools and coding outside of course schedule.
 
 ## Logistic
 
@@ -31,7 +31,7 @@ Schedule:
 
 Office hour:
 
-* Sunday 17:00 to 19:00
+* Sunday 17:00 to 19:00 at BIOS-144
 
 Textbook:
 
@@ -41,13 +41,14 @@ You do not need any textbook for this class as this Github will provide all reso
 
 * Collect data
   * Java crawler/collector
+  * [Optional] Akka framework
 * Store big data
   * MongoDB
   * Elastic Search
-  * [Optional] HDFS 
+  * [Optional] HDFS
 * Analyze big data
   * Elastic Search query
-  * Python Machine Learning to predict
+  * Python
   * [Optional] Hadoop MR (Map reduce)
 * Visualize data
   * Basic JavaScript 
