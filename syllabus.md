@@ -4,15 +4,17 @@
 
 **Objectives**
 
-The primary goal for Data Science class is to collect, store, analyze and visualize data for answering *the third order of knowledge*. 
+The primary goal for this Data Science class is to collect (acquire), store, analyze and visualize data for answering questions pertaining to *the third order of knowledge*. 
 
-Students will perform programming parts throughout the quarter to finish the final course project.
+Students will perform programming parts throughout the quarter to finish the final course project. 
 
 **Expectations**
 
-We expect students to have strong Java programming background with some Python programming experience.
+We expect students to have strong Java programming background with some Python programming experience.  
 
 Moreover, we expect students to spend large amount of time learning new tools and coding outside of course schedule.
+
+Finally, the programming assignments are non-trivial for a number of reasons, students are expected to understand and develop programs that have varying algorithmic complexities.  To this end, leaving the homework assignments to the last minute is a surefire way to *not* pass the course.
 
 ## Logistic
 
@@ -20,7 +22,7 @@ Instructor:
 
   * Eric Liao <rcliao01@gmail.com>
 
-Course assistance:
+Course assistant:
 
   * John Tran
 
@@ -35,7 +37,7 @@ Office hour:
 
 Textbook:
 
-You do not need any textbook for this class as this Github will provide all resource.
+Students do not need to purchase a textbook for this class as this Github will provide all resource.
 
 ## Course Objectives
 
@@ -63,7 +65,7 @@ You do not need any textbook for this class as this Github will provide all reso
 * Project - 20%
   > Successful completion of the course project is a need for passing this course.
 * Attendance & demeanor - 5%
-  > I expect you to show civility and human concern for each of those with whom you work and study while presenting a positive attitude and professional demeanor. This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.
+  > We expect you to show civility and concerns for your classmates.  We expect for you to approach the class with a positive attitude and professional demeanor.  This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.  Because the class is a fast-pace and demanding class, there will be opportunities an overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.
 
 ### Grading Scale
 
