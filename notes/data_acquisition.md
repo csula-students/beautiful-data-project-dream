@@ -7,6 +7,7 @@ To collect data ... in any format your question may require.
 * Implement Java data collector
 * Run collector
 * Resolve throttle issue
+* [Optional] Stream based programming
 
 ## Metrics
 
