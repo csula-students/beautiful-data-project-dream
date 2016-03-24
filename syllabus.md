@@ -52,7 +52,7 @@ You do not need any textbook for this class as this Github will provide all reso
   * [Optional] Hadoop MR (Map reduce)
 * Visualize data
   * Basic JavaScript 
-  * D3
+  * D3.js
   * HTML & CSS
   * Some UI/UX recommendations
 
@@ -61,9 +61,9 @@ You do not need any textbook for this class as this Github will provide all reso
 * Homework - 40%
 * Quizzes - 40%
 * Project - 20%
-* Attendance - 5%
-
-> Successful completion of the course project is a need for passing this course.
+  > Successful completion of the course project is a need for passing this course.
+* Attendance & demeanor - 5%
+  > I expect you to show civility and human concern for each of those with whom you work and study while presenting a positive attitude and professional demeanor. This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.
 
 ### Grading Scale
 
