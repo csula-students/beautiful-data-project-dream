@@ -56,12 +56,10 @@ visualization tools like D3!
 For the purpose of this course we consider the order of knowledge:
 
 * First order: obtaining information directly from the data or metadata
-* Second order: derive inferential information
-* Third order: predicting an outcome that is derived from data
+* Second order: comprehension of first order knowledge
+* Third order: derive inferential information or predicting an outcome that is derived from data
 
-A good question is aim to address third order knowledge! In other word,
-just download a data set and get the size of data is not consider to be
-good question!
+A good question is aim to address third order knowledge! In other word, just download a data set and get the size of data is not consider to be good question!
 
 ### Some starting points of data sets
 

@@ -37,7 +37,7 @@ Office hour:
 
 Textbook:
 
-Students do not need to purchase a textbook for this class as this Github will provide all resource.
+Students do not need to purchase a textbook for this class as this Github will provide all course material.
 
 ## Course Objectives
 
@@ -80,7 +80,7 @@ Students do not need to purchase a textbook for this class as this Github will p
 > Undergraduate students are required to obtain a grade 70 or above to pass the course
 * F: 0% to 69%
 
-## Ada statement
+## ADA statement
 
 Reasonable accommodation will be provided to any student who is registered with the Office of Students with Disabilities and requests needed accommodation.
 
