@@ -4,9 +4,9 @@
 
 **Objectives**
 
-The primary goal for this Data Science class is to collect (acquire), store, analyze and visualize data for answering questions pertaining to *the third order of knowledge*. 
+The primary goal for this Data Science class is to collect (acquire), store, analyze and visualize data for answering questions pertaining to *the third order of knowledge*.
 
-Students will perform programming parts throughout the quarter to finish the final course project. 
+Students will perform programming parts throughout the quarter to finish the final course project.
 
 **Expectations**
 
@@ -53,7 +53,7 @@ Students do not need to purchase a textbook for this class as this Github will p
   * Python
   * [Optional] Hadoop MR (Map reduce)
 * Visualize data
-  * Basic JavaScript 
+  * Basic JavaScript
   * D3.js
   * HTML & CSS
   * Some UI/UX recommendations
@@ -86,7 +86,7 @@ Reasonable accommodation will be provided to any student who is registered with 
 
 ## Academic Integrity
 
-Cheating on assignments and exams will not be tolerated. 
+Cheating on assignments and exams will not be tolerated.
 
 All parties involved will receive a grade of F for the course and be reported to the Computer Science Department.
 
@@ -96,14 +96,20 @@ The schedule below is tentative and is subject to change.
 
 | Week # [date] | Topic     | Notes |
 | --- | --- | --- |
-| 1 [4/3]       | Introduction | Form a team, set up environment |
-| 2 [4/10]      | Data Acquisition | **Homework 1** & **Quiz 1** |
-| 3 [4/17]      | Data Storage | Install MongoDB |
-| 4 [4/24]      | Data Storage | Install Elastic Search **Homework 2** |
-| 5 [5/1]       | Data Analysis | Elastic Search Query **Quiz 2** |
-| 6 [5/8]       | Data Analysis | MongoDB MapReduce **Homework 3** |
-| 7 [5/15]      | Data Analysis | Install Python **Quiz 3** |
-| 8 [5/22]      | Data Analysis | Machine learning |
-| 9 [5/29]      | Data Visualization | JavaScript and D3 **Quiz 4** |
-| 10 [6/5]      | Data Visualization | Install Docker **Homework 4** |
+| 1 [4/3]       | [Introduction][1] | Form a team, set up environment |
+| 2 [4/10]      | [Data Acquisition][2] | **Homework 1** & **Quiz 1** |
+| 3 [4/17]      | [Data Storage][3] | Install MongoDB |
+| 4 [4/24]      | [Data Storage][3] | Install Elastic Search **Homework 2** |
+| 5 [5/1]       | [Data Analysis][4] | Elastic Search Query **Quiz 2** |
+| 6 [5/8]       | [Data Analysis][4] | MongoDB MapReduce **Homework 3** |
+| 7 [5/15]      | [Data Analysis][4] | Install Python **Quiz 3** |
+| 8 [5/22]      | [Data Analysis][4] | Machine learning |
+| 9 [5/29]      | [Data Visualization][5] | JavaScript and D3 **Quiz 4** |
+| 10 [6/5]      | [Data Visualization][5] | Install Docker **Homework 4** |
 | Final [6/14]     | Launch date | Ready for demo! |
+
+[1]: notes/introduction.md
+[2]: notes/data_acquisition.md
+[3]: notes/data_storage.md
+[4]: notes/data_analysis.md
+[5]: notes/data_visualization.md

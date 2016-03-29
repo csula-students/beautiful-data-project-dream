@@ -8,10 +8,177 @@ Welcome to Data Science course again!
 * Introduction to Data Science
 * Set up development environment
 * Form a team
-* Create Github team repo
+* [Create Github team repo][1]
 
 ## Metrics
 
-* Github team repo
+* [Github team repo][1]
 * Data question
 * Pass unit tests
+
+### What is data science?
+
+![Data Science Graph](imgs/data_science.png)
+
+Data scientist is to make sense of data to make conclusion or even to predict outcome
+based on the data sets.
+
+### Class Overview
+
+1. Question  
+In this class, we will be starting by asking **question**. Your job this week is to
+do a lot of research on the question such as what data sets can you use to support
+your question/statement.
+2. Acquiring  
+With a good question, you will likely want to start your project by **acquiring data**.
+We will be programming in our *favorite language*, Java. In other word, your job
+is to implement my data collector interface and implement detail to collect data.
+3. Storage  
+After collecting huge amount of data, it's important to make decision on how to **store them**.
+To simplify our life a little bit, we will be using *MongoDB* as the primary database
+with Elastic Search as the secondary database for quick searching and exploring.
+4. Explore & Analysis  
+Then, we will cover the most important part of the course, **analytics**. In this part,
+we will start by utilizing Elastic Search for quick exploring of data. In other word,
+you can use Elastic Search a lot to do quick searching and make sense out of this
+huge set of data. After having some basic knowledge of the data, we will be learning
+on how to process them to do analysis. We will go over some basic Python with its
+libraries to do some basic Machine Learning.
+5. Communication via visualization  
+Once you are done analysis, we will be learning on how to create visualization based
+on the analysis we done earlier!
+
+In the end, you will be demo'ing to us about your findings by using beautiful
+visualization tools like D3!
+
+### What makes a good question?
+
+For the purpose of this course we consider the order of knowledge:
+
+* First order: obtaining information directly from the data or metadata
+* Second order: derive inferential information
+* Third order: predicting an outcome that is derived from data
+
+A good question is aim to address third order knowledge! In other word,
+just download a data set and get the size of data is not consider to be
+good question!
+
+### Some starting points of data sets
+
+[Awesome data sets](https://github.com/caesar0301/awesome-public-datasets)
+
+You may use the above awesome list to find out some initial good data
+sets as a starting point to ask some good questions.
+
+[Kaggle](https://www.kaggle.com/)
+
+Jaggle is awesome machine learning or data analytics competition site.
+It may be interesting to see if you can resolve one of their open
+challenge with the techniques we learn in this class.
+
+### Development Environment Setup
+
+1. Install [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if you have not done so
+> Keep it in mind you have to set up Java in Path variable for windows user
+2. Install [Gradle](http://gradle.org/)
+> Remember to set up JAVA_HOME pointing to where you install your JDK
+3. Clone this repository
+4. Run `gradle test` to see test failing!?
+
+#### Java
+
+Install [OracleJDK 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) if you don't already have one.
+
+##### Windows User
+
+Click on the link above (OracleJDK 8) to download Java 8. Upon completion of
+download, please set up the `PATH` path on your advanced environment settings from right click on your computer.
+
+> Remember to set it to your JDK **bin** folder
+
+##### Mac User
+
+You can install [brew](http://brew.sh/) and follow the following to install Java 8.
+
+```sh
+brew tap caskroom/cask
+brew install brew-cask
+brew cask install java
+```
+
+#### Gradle
+
+Install [Gradle](https://gradle.org/) as this will be our primary build tool.
+
+##### Windows User
+
+Click on the link above and install Gradle accordingly. Remember to set up `PATH`
+variable so that your terminal knows Gradle is executable.
+
+Also you will need to set up `JAVA_HOME` pointing to your JDK folder. In example, `C://jdk8/`
+
+##### Mac User
+
+Install via `brew install gradle` assuming you have `brew` installed.
+
+##### Linux User
+
+* CentOS users can follow the instruction found in [Github Gist](https://gist.github.com/parzonka/9371885).  
+* Ubuntu users take a look at the [Ask Ubuntu Stack Exchange Tutorial](https://askubuntu.com/questions/328178/gradle-in-ubuntu).
+
+##### To check Gradle is installed
+
+Please run `gradle -v` anywhere from terminal. You should see Gradle version as 2.12.
+
+### Wrap Up Java Review Exercise
+
+Download the course repository, run `gradle hello` after you are done. You should see
+`Hello Data Science` as the console output.
+
+After project is working with `gradle hello` above, please run `gradle eclipse` to convert
+this project to Eclipse project. Then you can import this folder into Eclipse
+(assuming you are using Eclipse) by `File >> Import >> General > Existing project into workspace`
+
+#### Eclipse Gradle plugins
+
+With above being done, you can start modifying your project in Eclipse. However, you are
+still not able to run the Gradle tasks. Therefore, you will also need this *Eclipse Gradle Plugin*
+to run the Gradle tasks (e.g. hello)
+
+**Instructions to install Gradle plugins in Eclipse**
+
+1. In Eclipse Open Help >> Install New Software
+2. Paste a Gradle update site link -- http://dist.springsource.com/release/TOOLS/gradle -- into the "Work with" text box.
+3. Click the Add button at the top of the screen.
+4. Ensure that the option "Group Items by Category" is enabled.
+5. Select the top-level node 'Extensions / Gradle Integration'.
+6. Click "Next". This may take a while.
+7. Review the list of software that will be installed. Click "Next" again.
+8. Review and accept license agreements and Click "Finish".
+
+**Instructions to run Gradle tasks in Eclipse**
+
+1. Right click on the project and click on `Configure` >> `Convert project to Gradle project`.
+2. And then you can right click on the project to run Gradle tasks
+3. You can now run your project by right click on the project `Run > Gradle build ... (second Gradle build one)` and provide `hello` in the task
+
+#### Recommended readings for Gradle
+
+* http://gradle.org/getting-started-gradle-java/
+* http://www.vogella.com/tutorials/Gradle/article.html
+
+If you have trouble with Git/Github, you can look through [this document](https://github.com/csula/cs460-fall-2015/blob/master/documents/misc/github-tutorial.md) as quick tutorial.
+
+Still have trouble? Please feel free to raise your hand and I'll be walking around to help.
+
+**IDE Choice**
+
+If you ask my suggestion on IDE, I'd suggest all of you to use [IntelliJ](https://www.jetbrains.com/idea/) rather than Eclipse because IntelliJ has better support of Gradle. Moreover, I'll be using IntelliJ & [Atom](https://atom.io/) to demonstrate throughout the rest of quarter.
+
+### Further reading
+
+* https://github.com/okulbilisim/awesome-datascience
+* http://mattturck.com/2016/02/01/big-data-landscape/
+* http://stackoverflow.com/research/developer-survey-2016
+
+[1]: https://classroom.github.com/group-assignment-invitations/3e4af577b77cf362717862f3f18b93ed
