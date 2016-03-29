@@ -13,3 +13,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
+task hello(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+
+    main = 'edu.csula.datascience.examples.Hello'
+}
