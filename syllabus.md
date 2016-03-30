@@ -24,7 +24,7 @@ Instructor:
 
 Course assistant:
 
-  * John Tran
+  * John Tran <johnjtran@icloud.com>
 
 Schedule:
 
@@ -58,16 +58,20 @@ Students do not need to purchase a textbook for this class as this Github will p
   * HTML & CSS
   * Some UI/UX recommendations
 
-## Grading Allocation
+## Grading Policy
 
-* Homework - 40%
-* Quizzes - 40%
-* Project - 20%
-  > Successful completion of the course project is a need for passing this course.
-* Attendance & demeanor - 5%
-  > We expect you to show civility and concerns for your classmates.  We expect for you to approach the class with a positive attitude and professional demeanor.  This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.  Because the class is a fast-pace and demanding class, there will be opportunities an overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.
+The purpose of this grading policy is to fairly evaluate student's performance.  Please review them carefully.
+
+### Grading Allocation
+
+* Homework - 40 points
+* Quizzes - 40 points
+* Project - 20 points
+* Attendance & demeanor - 5 points (more below)
 
 ### Grading Scale
+
+The final grade will be adjusted to a 100 point scale as followed.
 
 * A: 94% to 105%
 * A-: 90% to 93%
@@ -80,15 +84,60 @@ Students do not need to purchase a textbook for this class as this Github will p
 > Undergraduate students are required to obtain a grade 70 or above to pass the course
 * F: 0% to 69%
 
-## ADA statement
+### Administratrivia
 
-Reasonable accommodation will be provided to any student who is registered with the Office of Students with Disabilities and requests needed accommodation.
+* Successful completion of the course project is needed for passing this course.
+
+* We expect you to show civility and concerns for your classmates.  We expect for you to approach the class with a positive attitude and professional demeanor.  
+
+  > This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.  
+
+  Because the class is a fast-pace and demanding class, there will be opportunities an overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.
+
+#### Request for a Regrade
+
+* In those cases of arithmetic errors, please bring the issue to the instructor-in-charge immediately.  We will make the necessary adjustments (no questions asked).  
+
+* In those cases where **students feel that they should get more because ___**.  PLEASE DO NOT BOTHER.  We will listen to your plight, but we will not regrade.  
+
+  ___ includes (but not limited to):
+
+	* They worked really hard on the assignment or project
+	* They would have to endure shame with family and friends
+	* They need _XYZ_ grade to graduate
+
+
+* In those cases where students believe that the grade rendered does not reflect the quality of the work, students must submit in writing within 1 week a request for regrade with the following information:
+
+  - Name and CIN number
+  - Assignment #/Exam #/Project
+  - Specific problem #
+  - Clearly articulated rationale with supporting data to backup your claim
+
+We will review your request for regrade and respond accordingly.  Please note that as a matter of principle the **entire** assignment, exam, or project will be evaluated.  This is because, more often than none, our grading method are generous to begin with and that we would give students the benefits of doubt.
+
+> Please do the proper risk reward analysis.
+
+It is entirely possible that a grading request can result in an overall lower score.  For the final regrade requests, it is possible that students can actually fail the course.  
+
 
 ## Academic Integrity
 
-Cheating on assignments and exams will not be tolerated.
+Cheating will not be tolerated.  All parties involved will receive a grade of **F for the course** and be reported to the Computer Science Department.
 
-All parties involved will receive a grade of F for the course and be reported to the Computer Science Department.
+To be clear, let us define cheating:
+
+> Cheating is taking and receiving unauthorized assistance on an assignment, exam, or project.  Which is essentially claiming that work that belongs to someone else to be your own; or giving the solution to someone else.
+
+Note that we do not discourage discussion and collaboration.  However, we are very adamant that you utilize the class's discussion board for this purpose.
+
+Over the years, we have developed a number of strategies and techniques to identify cheating.  The biggest tell-tail sign of cheating is not understanding your solution and/or source code.  Second, we have automated tools for source code analysis.  To this extent, simply reformatting source code or renaming variables is pointless.
+
+> The bottomline: don't cheat, if you are caught cheating, and there will be **no negotiation**.  All parties involved would simply get an F for course.  So please do the proper risk reward analysis.
+
+## ADA statement
+
+Reasonable accommodation will be provided to any student who is registered with the Office of Students with Disabilities and requests needed accommodation.
 
 ## Course Schedule
 
