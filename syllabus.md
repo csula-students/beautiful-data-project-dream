@@ -16,9 +16,9 @@ Moreover, we expect students to spend large amount of time learning new tools an
 
 Finally, the programming assignments are non-trivial for a number of reasons, students are expected to understand and develop programs that have varying algorithmic complexities.  To this end, leaving the homework assignments to the last minute is a surefire way to *not* pass the course.
 
-## Logistic
+## Logistics
 
-Instructor:
+Instructor-in-charge:
 
   * Eric Liao <rcliao01@gmail.com>
 
@@ -38,6 +38,12 @@ Office hour:
 Textbook:
 
 Students do not need to purchase a textbook for this class as this Github will provide all course material.
+
+Computer:
+
+Students are required to have a laptop computer for the course.  On some assignments and certainly for the final project where a live demo is required, it is unreasonable to coordinate with anything other than a laptop.
+
+We do not endorse a particular platform or OS; however, we encourage students to pick something that has reasonable computing horsepower.  For this reason, chromebooks or tablets are not suitable for serious software development and data processing.
 
 ## Course Objectives
 
@@ -67,32 +73,34 @@ The purpose of this grading policy is to fairly evaluate student's performance. 
 * Homework - 40 points
 * Quizzes - 40 points
 * Project - 20 points
-* Attendance & demeanor - 5 points (more below)
+* Attendance & decorum - 5 points (more below)
 
 ### Grading Scale
 
 The final grade will be adjusted to a 100 point scale as followed.
 
-* A: 94% to 105%
-* A-: 90% to 93%
-* B+: 85% to 89%
-* B: 80% to 84%
+* A: 94 to 100
+* A-: 90 to 93
+* B+: 85 to 89
+* B: 80 to 84
 > Graduate students are required to get a grade 80 or above to pass the course
-* B-: 77% to 79%
-* C+: 74% to 76%
-* C: 70% to 73%
+* B-: 77 to 79
+* C+: 74 to 76
+* C: 70 to 73
 > Undergraduate students are required to obtain a grade 70 or above to pass the course
-* F: 0% to 69%
+* F: 0 to 69
 
-### Administratrivia
+Successful completion of the course project is needed for passing this course.
 
-* Successful completion of the course project is needed for passing this course.
+### Course Decorum
 
-* We expect you to show civility and concerns for your classmates.  We expect for you to approach the class with a positive attitude and professional demeanor.  
+We expect you to show civility and concerns for your classmates.  We expect for you to approach the class with a positive attitude and professional demeanor.  
 
-  > This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.  
+> This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.  
 
-  Because the class is a fast-pace and demanding class, there will be opportunities an overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.
+Because the class is a fast-pace and demanding class, there will be opportunities for an overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.  Please ask for help often and early.
+
+The instructors are obligated to listen to the students' concerns and to treat each student with the needed respect and dignity.  However, the instructors are not obligated to honor any and all requests.  Especially in those cases students ask for assistance during the 11th hour.
 
 #### Request for a Regrade
 
@@ -114,11 +122,9 @@ The final grade will be adjusted to a 100 point scale as followed.
   - Specific problem #
   - Clearly articulated rationale with supporting data to backup your claim
 
-We will review your request for regrade and respond accordingly.  Please note that as a matter of principle the **entire** assignment, exam, or project will be evaluated.  This is because, more often than none, our grading method are generous to begin with and that we would give students the benefits of doubt.
+We will review your request for a regrade and respond accordingly.  Please note that as a matter of principle the **entire** assignment, exam, or project will be evaluated.  This is because, more often than none, our grading methods are generous to begin with and that we always give students the benefit of doubt.
 
-> Please do the proper risk reward analysis.
-
-It is entirely possible that a grading request can result in an overall lower score.  For the final regrade requests, it is possible that students can actually fail the course.  
+> It is entirely possible that a regrade request can result in an overall lower score for the assignment or exam.  With respect to the course project or the final grade, it is possible that students can actually fail the course.  Please do the proper risk reward analysis.
 
 
 ## Academic Integrity
@@ -129,11 +135,11 @@ To be clear, let us define cheating:
 
 > Cheating is taking and receiving unauthorized assistance on an assignment, exam, or project.  Which is essentially claiming that work that belongs to someone else to be your own; or giving the solution to someone else.
 
-Note that we do not discourage discussion and collaboration.  However, we are very adamant that you utilize the class's discussion board for this purpose.
-
 Over the years, we have developed a number of strategies and techniques to identify cheating.  The biggest tell-tail sign of cheating is not understanding your solution and/or source code.  Second, we have automated tools for source code analysis.  To this extent, simply reformatting source code or renaming variables is pointless.
 
-> The bottomline: don't cheat, if you are caught cheating, and there will be **no negotiation**.  All parties involved would simply get an F for course.  So please do the proper risk reward analysis.
+> The bottomline: don't cheat, if you are caught cheating,  all parties involved would simply get an F for course.  This is not negotiable.  So please do the proper risk reward analysis.
+
+Please note that we do not discourage discussion and collaboration.  However, we are very adamant that you utilize the class's discussion board and office hours for this purpose.
 
 ## ADA statement
 
