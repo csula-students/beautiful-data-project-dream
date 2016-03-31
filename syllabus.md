@@ -104,18 +104,9 @@ The instructors are obligated to listen to the students' concerns and to treat e
 
 ### Request for a Regrade
 
-* In those cases of arithmetic errors, please bring the issue to the instructor-in-charge immediately.  We will make the necessary adjustments (no questions asked).  
+In those cases of arithmetic errors, please bring the issue to the instructor-in-charge immediately.  We will make the necessary adjustments.  
 
-* In those cases where **students feel that they should get more because ___**.  PLEASE DO NOT BOTHER.  We will listen to your plight, but we will not regrade.  
-
-  ___ includes (but not limited to):
-
-	* They worked really hard on the assignment or project
-	* They would have to endure shame with family and friends
-	* They need _XYZ_ grade to graduate
-
-
-* In those cases where students believe that the grade rendered does not reflect the quality of the work, students must submit in writing within 1 week a request for regrade with the following information:
+In those cases where students believe that the grade rendered does not reflect the quality of the work, students must submit in writing within 1 week a request for regrade with the following information:
 
   - Name and CIN number
   - Assignment #/Exam #/Project
@@ -126,9 +117,17 @@ We will review your request for a regrade and respond accordingly.  Please note 
 
 > It is entirely possible that a regrade request can result in an overall lower score for the assignment or exam.  With respect to the course project or the final grade, it is possible that students can actually fail the course.  Please do the proper risk reward analysis.
 
+In those cases where **students feel that they should get more because ___**.  Where ___ includes (but not limited to):
+
+* They worked really hard on the assignment or project
+* They would have to endure shame with family and friends
+* They need _XYZ_ grade to graduate
+
+PLEASE DO NOT BOTHER!!
+
 ### Late Policy
 
-Students are permitted one 1-week late submission/demonstration on the programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
+Students are permitted one 1-week late submission or demonstration on the programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
 
 The same provision does not extend to the course project.  The course project demonstration will take place during the university's designated final exam day and will not be offered at any other time.  Please make plan your study schedule and travel arrangements accordingly.
 
@@ -173,3 +172,7 @@ The schedule below is tentative and is subject to change.
 [3]: notes/data_storage.md
 [4]: notes/data_analysis.md
 [5]: notes/data_visualization.md
+
+This syllabus is subjected to change.  In the event of an update, we will notify students and provide a rationale for the adjustment.
+
+Last update: 30 March 2016
