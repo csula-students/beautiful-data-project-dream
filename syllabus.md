@@ -128,9 +128,9 @@ We will review your request for a regrade and respond accordingly.  Please note 
 
 ### Late Policy
 
-Students are permitted to have one 1-week late on programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
+Students are permitted one 1-week late submission/demonstration on the programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
 
-The same provision does not extend to course project.  The course project demonstration will take place during the university's designated final exam day.
+The same provision does not extend to the course project.  The course project demonstration will take place during the university's designated final exam day and will not be offered at any other time.  Please make plan your study schedule and travel arrangements accordingly.
 
 ## Academic Integrity
 
