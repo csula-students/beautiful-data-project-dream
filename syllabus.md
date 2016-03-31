@@ -133,17 +133,44 @@ The same provision does not extend to the course project.  The course project de
 
 ## Academic Integrity
 
-Cheating will not be tolerated.  All parties involved will receive a grade of **F for the course** and be reported to the Computer Science Department.
+Cheating will not be tolerated.  Once adjudicated, all involved parties will receive a grade of **F for the course** and be reported to the Computer Science Department.
 
-To be clear, let us define cheating:
+### Definition of Cheating
 
-> Cheating is taking and receiving unauthorized assistance on an assignment, exam, or project.  Which is essentially claiming that work that belongs to someone else to be your own; or giving the solution to someone else.
+In our view, cheating is a disease in academia that undermines the value of a quality education.  What's worse, it is a selfish act that is ultimately injurious to the individual and the collective.
+
+For this, let us obviate any ambiguity with a commonly accepted definition of cheating:
+
+> Cheating is claiming someone else's work to be your own.  Cheating is not just receiving unauthorized assistance on an assignment, exam, or project but also providing the solution to others.
+
+Note that we do not discourage discussion and collaboration.  However, we are very adamant that you utilize the class's discussion board and office hours for this purpose.
+
+### Determination of a Cheating Incident
 
 Over the years, we have developed a number of strategies and techniques to identify cheating.  The biggest tell-tail sign of cheating is not understanding your solution and/or source code.  Second, we have automated tools for source code analysis.  To this extent, simply reformatting source code or renaming variables is pointless.
 
-> The bottomline: don't cheat, if you are caught cheating,  all parties involved would simply get an F for course.  This is not negotiable.  So please do the proper risk reward analysis.
+### Adjudication Process
 
-Please note that we do not discourage discussion and collaboration.  However, we are very adamant that you utilize the class's discussion board and office hours for this purpose.
+We will inform all involved parties **in writing** of our observation, along with evidence and our intention to administer the appropriate penalty.  For this course, the only available penalty is an F as the final grade.
+
+Each student then will have 1 week to respond individually and **in writing** with his or her side of the story.
+
+> Note that an apology, recognition of mistake, and/or promise to never do it again are not considered and will most definitely result in a change in the verdict.  A non-response is considered an acceptance of responsibility.
+
+We seek out a opinion from a non-interested third party reviewer, most likely another instructor.  This request for review be anonymized and will include:
+
+* Course syllabus
+* Accusation
+* Supporting Evidence
+* Student's response
+
+The only question that we will present to the third party reviewer will be `did cheating take place?`  We will be very clear that we are not interested in gradation, severity, or level of cheating nor are we interested intent or rationale.
+
+While we will listen to your plight and drama, once decided we will not change the outcome.  You can, however, be assured that we will treat students with dignity and respect throughout the process.
+
+> The bottomline: don't cheat, if you cheat, you would simply get an F for course.  This is not negotiable.  So please do the proper risk reward analysis.
+
+Finally, we will inform all involved of our final decision.  By definition, a final decision is **final**.
 
 ## ADA statement
 
