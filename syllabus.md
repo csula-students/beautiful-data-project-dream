@@ -102,7 +102,7 @@ Because the class is a fast-pace and demanding class, there will be opportunitie
 
 The instructors are obligated to listen to the students' concerns and to treat each student with the needed respect and dignity.  However, the instructors are not obligated to honor any and all requests.  Especially in those cases students ask for assistance during the 11th hour.
 
-#### Request for a Regrade
+### Request for a Regrade
 
 * In those cases of arithmetic errors, please bring the issue to the instructor-in-charge immediately.  We will make the necessary adjustments (no questions asked).  
 
