@@ -126,6 +126,11 @@ We will review your request for a regrade and respond accordingly.  Please note 
 
 > It is entirely possible that a regrade request can result in an overall lower score for the assignment or exam.  With respect to the course project or the final grade, it is possible that students can actually fail the course.  Please do the proper risk reward analysis.
 
+### Late Policy
+
+Students are permitted to have one 1-week late on programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
+
+The same provision does not extend to course project.  The course project demonstration will take place during the university's designated final exam day.
 
 ## Academic Integrity
 
