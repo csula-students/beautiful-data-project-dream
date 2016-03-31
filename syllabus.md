@@ -155,7 +155,7 @@ We will inform all involved parties **in writing** of our observation, along wit
 
 Each student then will have 1 week to respond individually and **in writing** with his or her side of the story.
 
-> Note that an apology, recognition of mistake, and/or promise to never do it again are not considered and will most definitely result in a change in the verdict.  A non-response is considered an acceptance of responsibility.
+> Note that an apology, recognition of mistake, and/or promise to never do it again will not be considered and will most definitely NOT have an affect on the verdict.  A non-response is considered an acceptance of responsibility.
 
 We seek out a opinion from a non-interested third party reviewer, most likely another instructor.  This request for review be anonymized and will include:
 
