@@ -12,38 +12,39 @@ Students will perform programming parts throughout the quarter to finish the fin
 
 We expect students to have strong Java programming background with some Python programming experience.  
 
-Moreover, we expect students to spend large amount of time learning new tools and coding outside of course schedule.
+Moreover, we expect students to spend a large amount of time learning new tools and coding outside of course schedule.
 
 Finally, the programming assignments are non-trivial for a number of reasons, students are expected to understand and develop programs that have varying algorithmic complexities.  To this end, leaving the homework assignments to the last minute is a surefire way to *not* pass the course.
 
 ## Logistics
 
-Instructor-in-charge:
+#### Instructor-in-charge:
 
   * Eric Liao <rcliao01@gmail.com>
 
-Course assistant:
+#### Course assistant:
 
   * John Tran <johnjtran@icloud.com>
 
-Schedule:
+#### Schedule:
 
-  * Undergrad: Sunday 9:10 to 13:00 at ET-A309
-  * Grad: Sunday 13:10 to 17:00 at BIOS-144
+  * Undergraduate: Sunday 9:10 to 13:00 at ET-A309
+  * Graduate: Sunday 13:10 to 17:00 at BIOS-144
 
-Office hour:
+#### Office hours:
 
-* Sunday 17:00 to 19:00 at BIOS-144
+  * Sunday 17:00 to 19:00 at BIOS-144
+  * Online via gitter as available (usually 24/7)
 
-Textbook:
+#### Textbook:
 
-Students do not need to purchase a textbook for this class as this Github will provide all course material.
+Students do not need to purchase a textbook for this class as this Github will provide all course materials.
 
-Computer:
+#### Computer:
 
 Students are required to have a laptop computer for the course.  On some assignments and certainly for the final project where a live demo is required, it is unreasonable to coordinate with anything other than a laptop.
 
-We do not endorse a particular platform or OS; however, we encourage students to pick something that has reasonable computing horsepower.  For this reason, chromebooks or tablets are not suitable for serious software development and data processing.
+We do not endorse a particular platform or OS; however, we encourage students to pick something that has reasonable computing horsepower.  For this reason, Chromebooks or tablets are not suitable for serious software development and data processing.
 
 ## Course Objectives
 
@@ -90,7 +91,7 @@ The final grade will be adjusted to a 100 point scale as followed.
 > Undergraduate students are required to obtain a grade 70 or above to pass the course
 * F: 0 to 69
 
-Successful completion of the course project is needed for passing this course.
+Successful completion of the course project is **required** for passing this course.
 
 ### Course Decorum
 
@@ -98,9 +99,9 @@ We expect you to show civility and concerns for your classmates.  We expect for 
 
 > This includes remaining alert (and awake!) in class, respecting and never interrupting others, limiting private conversations, and keeping phones off.  
 
-Because the class is a fast-pace and demanding class, there will be opportunities for an overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.  Please ask for help often and early.
+Because the class is a fast-paced and demanding class, there will be opportunities for overwhelmed feeling.  The best way to address these challenges is to discuss the course on gitter and with the instructors.  Please ask for help often and early.
 
-The instructors are obligated to listen to the students' concerns and to treat each student with the needed respect and dignity.  However, the instructors are not obligated to honor any and all requests.  Especially in those cases students ask for assistance during the 11th hour.
+The instructors are obligated to listen to the students' concerns and to treat each student with the needed respect and dignity.  However, the instructors are not obligated to honor any and all requests.  Especially in those cases when students ask for assistance during the 11th hour.
 
 ### Request for a Regrade
 
@@ -110,7 +111,6 @@ In those cases where students believe that the grade rendered does not reflect t
 
   - Name and CIN number
   - Assignment #/Exam #/Project
-  - Specific problem #
   - Clearly articulated rationale with supporting data to backup your claim
 
 We will review your request for a regrade and respond accordingly.  Please note that as a matter of principle the **entire** assignment, exam, or project will be evaluated.  This is because, more often than none, our grading methods are generous to begin with and that we always give students the benefit of doubt.
@@ -123,13 +123,13 @@ In those cases where **students feel that they should get more because ___**.  W
 * They would have to endure shame with family and friends
 * They need _XYZ_ grade to graduate
 
-PLEASE DO NOT BOTHER!!
+Please **do not bother**.  We will not entertain such a request.
 
 ### Late Policy
 
 Students are permitted one 1-week late submission or demonstration on the programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
 
-The same provision does not extend to the course project.  The course project demonstration will take place during the university's designated final exam day and will not be offered at any other time.  Please make plan your study schedule and travel arrangements accordingly.
+The same provision does not extend to the course project.  The course project demonstration will take place during the university's designated final exam day and will not be offered at any other time.  Please plan your study schedule and travel arrangements accordingly.
 
 ## Academic Integrity
 
@@ -147,7 +147,9 @@ Note that we do not discourage discussion and collaboration.  However, we are ve
 
 ### Determination of a Cheating Incident
 
-Over the years, we have developed a number of strategies and techniques to identify cheating.  The biggest tell-tail sign of cheating is not understanding your solution and/or source code.  Second, we have automated tools for source code analysis.  To this extent, simply reformatting source code or renaming variables is pointless.
+Over the years, we have developed a number of strategies and techniques to identify cheating.  The biggest tell-tail sign of cheating is when students do not understand their solution and/or source code.  Second, we have automated tools for source code analysis.  To this extent, simply reformatting source code or renaming variables is pointless.
+
+While we will listen to your explanation, once decided we will not change our determination.  You can, however, be assured that we will treat students with dignity and respect throughout the process.
 
 ### Adjudication Process
 
@@ -157,16 +159,14 @@ Each student then will have 1 week to respond individually and **in writing** wi
 
 > Note that an apology, recognition of mistake, and/or promise to never do it again will not be considered and will most definitely NOT have an affect on the verdict.  A non-response is considered an acceptance of responsibility.
 
-We seek out a opinion from a non-interested third party reviewer, most likely another instructor.  This request for review be anonymized and will include:
+We seek out a opinion from a non-interested third party reviewer, most likely another instructor.  The student's identity will be anonymized when we make a request for a third party evaluation.  The review package will only include:
 
 * Course syllabus
 * Accusation
 * Supporting Evidence
 * Student's response
 
-The only question that we will present to the third party reviewer will be `did cheating take place?`  We will be very clear that we are not interested in gradation, severity, or level of cheating nor are we interested intent or rationale.
-
-While we will listen to your plight and drama, once decided we will not change the outcome.  You can, however, be assured that we will treat students with dignity and respect throughout the process.
+The only question that we present to the third party reviewer will be `did cheating take place?`  We will be very clear that we are not interested in gradation, severity, or level of cheating nor are we interested intent or rationale.
 
 > The bottomline: don't cheat, if you cheat, you would simply get an F for course.  This is not negotiable.  So please do the proper risk reward analysis.
 
@@ -202,4 +202,4 @@ The schedule below is tentative and is subject to change.
 
 This syllabus is subjected to change.  In the event of an update, we will notify students and provide a rationale for the adjustment.
 
-Last update: 30 March 2016
+Last update: 2 April 2016
