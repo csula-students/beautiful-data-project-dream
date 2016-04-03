@@ -6,15 +6,15 @@
 
 The primary goal for this Data Science class is to collect (acquire), store, analyze and visualize data for answering questions pertaining to *the third order of knowledge*.
 
-Students will perform programming parts throughout the quarter to finish the final course project.
+Students will perform programming parts throughout the quarter to finish the final course project that achieve above requirements.
 
 **Expectations**
 
-We expect students to have strong Java programming background with some Python programming experience.  
+We expect students to have strong Java programming background with ability to manage your own programming environment such as installing new tools and maintaining your tools.
 
-Moreover, we expect students to spend a large amount of time learning new tools and coding outside of course schedule.
+In addition, we also expect students to spend a large amount of time learning new technologies and coding outside of course schedule.
 
-Finally, the programming assignments are non-trivial for a number of reasons, students are expected to understand and develop programs that have varying algorithmic complexities.  To this end, leaving the homework assignments to the last minute is a surefire way to *not* pass the course.
+Finally, the programming assignments are **non-trivial** for a number of reasons, students are expected to understand and develop programs that have varying algorithmic complexities. To this end, leaving the homework assignments to the last minute is a surefire way to *not* pass the course.
 
 ## Logistics
 
@@ -35,6 +35,9 @@ Finally, the programming assignments are non-trivial for a number of reasons, st
 
   * Sunday 17:00 to 19:00 at BIOS-144
   * Online via gitter as available (usually 24/7)
+
+> Please do ask the question early and often than leaving questions at the last moment (e.g. 1am before the homework is due).  
+> Although instructors are generally available for most of time, we are not obligated to keep up with all last moment questions with students right before due date.
 
 #### Textbook:
 
@@ -60,10 +63,8 @@ We do not endorse a particular platform or OS; however, we encourage students to
   * Python
   * [Optional] Hadoop MR (Map reduce)
 * Visualize data
-  * Basic JavaScript
+  * Basic JavaScript, HTML & CSS
   * D3.js
-  * HTML & CSS
-  * Some UI/UX recommendations
 
 ## Grading Policy
 
@@ -127,7 +128,7 @@ Please **do not bother**.  We will not entertain such a request.
 
 ### Late Policy
 
-Students are permitted one 1-week late submission or demonstration on the programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
+Students are permitted **one** 1-week late submission or demonstration on the programming assignments provided that they coordinate *ahead of time with the instructors*.  After the second week, the grade for assignment will be 0.
 
 The same provision does not extend to the course project.  The course project demonstration will take place during the university's designated final exam day and will not be offered at any other time.  Please plan your study schedule and travel arrangements accordingly.
 
