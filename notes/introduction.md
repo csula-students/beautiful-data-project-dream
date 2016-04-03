@@ -6,14 +6,13 @@ Welcome to Data Science course again!
 
 * [Syllabus](../syllabus.md)
 * Introduction to Data Science
-* Set up development environment
-* Form a team
-* [Create Github team repo][1]
+* Set up development environment (Java & Gradle)
+* [Form a team & create Github team repo][1]
 
 ## Metrics
 
 * [Github team repo][1]
-* Data question
+* Data question - [homework 1](../homeworks/homework1.md)
 * Pass unit tests
 
 ### What is data science?
@@ -74,13 +73,24 @@ Jaggle is awesome machine learning or data analytics competition site.
 It may be interesting to see if you can resolve one of their open
 challenge with the techniques we learn in this class.
 
+### Big data?
+
+What is considered to be big data?
+
+* Volume
+* Velocity
+* Variety
+
 ### Development Environment Setup
 
 1. Install [Java](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) if you have not done so
-> Keep it in mind you have to set up Java in Path variable for windows user
+> Keep it in mind you have to set up Java in `Path` variable for windows user  
+> You should be able to do `java -version` to see 1.8 as version from here
 2. Install [Gradle](http://gradle.org/)
-> Remember to set up JAVA_HOME pointing to where you install your JDK
+> Remember to set up `JAVA_HOME` pointing to where you install your JDK  
+> You should be able to run `gradle -v` to see gradle version
 3. Clone this repository
+> `git clone` or use Github client or download as zip whatever you want
 4. Run `gradle test` to see test failing!?
 
 #### Java
@@ -156,22 +166,29 @@ to run the Gradle tasks (e.g. hello)
 
 **Instructions to run Gradle tasks in Eclipse**
 
-1. Right click on the project and click on `Configure` >> `Convert project to Gradle project`.
-2. And then you can right click on the project to run Gradle tasks
-3. You can now run your project by right click on the project `Run > Gradle build ... (second Gradle build one)` and provide `hello` in the task
+1. import this repository as gradle project
+2. Right click and run gradle task
+
+> Although I do suggest all of you to run tasks from terminal/cmd.
 
 #### Recommended readings for Gradle
 
 * http://gradle.org/getting-started-gradle-java/
 * http://www.vogella.com/tutorials/Gradle/article.html
 
+#### Recommended reading for Git/Github
+
 If you have trouble with Git/Github, you can look through [this document](https://github.com/csula/cs460-fall-2015/blob/master/documents/misc/github-tutorial.md) as quick tutorial.
 
 Still have trouble? Please feel free to raise your hand and I'll be walking around to help.
 
-**IDE Choice**
+### Unit Testing
 
-If you ask my suggestion on IDE, I'd suggest all of you to use [IntelliJ](https://www.jetbrains.com/idea/) rather than Eclipse because IntelliJ has better support of Gradle. Moreover, I'll be using IntelliJ & [Atom](https://atom.io/) to demonstrate throughout the rest of quarter.
+Test Driven Development or Behavior Driven Development gives you a lot more confidence of refactoring in future. Moreover, testing is often being adapted at more popular Open Source projects. Why? Because testing gives the confidence of merging codes from unknown developers.
+
+How do we measure unit test?
+
+In this class, I'll set up Coverall as the code coverage tool to measure how much unit tests students implement. This will give me fair amount of testing you implement for your project. Example can be seen in this course repo.
 
 ### Further reading
 
@@ -179,4 +196,4 @@ If you ask my suggestion on IDE, I'd suggest all of you to use [IntelliJ](https:
 * http://mattturck.com/2016/02/01/big-data-landscape/
 * http://stackoverflow.com/research/developer-survey-2016
 
-[1]: https://classroom.github.com/group-assignment-invitations/3e4af577b77cf362717862f3f18b93ed
+[1]: https://classroom.github.com/group-assignment-invitations/6892eb1f5c3ebe3a94c1fa6f81af5813
