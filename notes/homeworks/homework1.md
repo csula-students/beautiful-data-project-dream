@@ -28,6 +28,8 @@ Your task is to put your write up individually on a [secret gist][1]. Once you a
 
 [Example can be found here][2]
 
+<script src="https://gist.github.com/rcliao/2be375d3d5d3b34bd3cfdfa0945f945c.js"></script>
+
 ## Deliverables
 
 * Gist link on CSNS - homework 1
