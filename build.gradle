@@ -25,3 +25,7 @@ task hello(type: JavaExec) {
 
   main = 'edu.csula.datascience.examples.Hello'
 }
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
