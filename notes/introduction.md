@@ -18,9 +18,23 @@ Welcome to Data Science course again!
 ### What is data science?
 
 ![Data Science Graph](imgs/data_science.png)
+Credit: http://i.imgur.com/AfFMkHe.jpg
 
-Data scientist is to make sense of data to make conclusion or even to predict outcome
-based on the data sets.
+Data scientist is to make sense of data to make conclusion or even to predict outcome based on the data sets.
+
+Common skill sets of data scientist:
+
+* Math Statistics
+* Python / R
+* D3 or some other visualization tool
+* Hadoop / Elastic Search
+* Database reading knowledge (like sql query, mongo db script)
+* Machine learning
+
+**Recommended readings**
+
+* [What is data science by O'reilly](https://www.oreilly.com/ideas/what-is-data-science)
+* [The sexiest job at 21th century by Hbr](https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century/ar/1)
 
 ### Class Overview
 
@@ -47,9 +61,6 @@ libraries to do some basic Machine Learning.
 Once you are done analysis, we will be learning on how to create visualization based
 on the analysis we done earlier!
 
-In the end, you will be demo'ing to us about your findings by using beautiful
-visualization tools like D3!
-
 ### What makes a good question?
 
 For the purpose of this course we consider the order of knowledge:
@@ -69,17 +80,37 @@ sets as a starting point to ask some good questions.
 
 [Kaggle](https://www.kaggle.com/)
 
-Jaggle is awesome machine learning or data analytics competition site.
+Kaggle is awesome machine learning or data analytics competition site.
 It may be interesting to see if you can resolve one of their open
 challenge with the techniques we learn in this class.
 
-### Big data?
+[Google public data set](https://cloud.google.com/bigquery/public-data/)
 
-What is considered to be big data?
+Google also provides some data set that you can use their BigQuery to do some processing.
+
+[AWS pubilc data set](https://aws.amazon.com/public-data-sets/)
+
+Amazon hosts some data set as well!
+
+### What is considered to be big data?
 
 * Volume
 * Velocity
 * Variety
+
+Above 3Vs define the properties of big data. Volume refers to the size of data (GB, TB or even PB), variety refers to the number of types of data and velocity refers to how fast slow data comes in.
+
+**Interesting trending**
+
+> Big data got started from 1990s to early 2000s when larger internet companies forced to invent new way to manage big volume of data. Today, most people think of Hadoop or NoSQL database like MongoDB when they of Big Data.  However, the original core components of Hadoop,
+HDFS (Hadoop Distributed File System—for storage), MapReduce (the compute engine), and the resource
+manager now called YARN (Yet Another Resource Negotiator) are rooted in the batch-mode or offline
+processing commonplace ten to twenty years ago, where data is captured to storage and then processed
+periodically with batch jobs. Most search engines worked this way in the beginning. The data gathered by
+web crawlers was periodically processed into updated search results.  
+- [Fast Data: Big Data Evolved By Dean Wampler, PhD](https://info.lightbend.com/COLL-20XX-Fast-Data-Big-Data-Evolved-WP_LP.html?lst=WS&lsd=COLL-20XX-Fast-Data-Big-Data-Evolved-WP)
+
+---
 
 ### Development Environment Setup
 
@@ -188,7 +219,48 @@ Test Driven Development or Behavior Driven Development gives you a lot more conf
 
 How do we measure unit test?
 
-In this class, I'll set up Coverall as the code coverage tool to measure how much unit tests students implement. This will give me fair amount of testing you implement for your project. Example can be seen in this course repo.
+In this class, I'll set up Coverall as the code coverage tool to measure how much unit tests students implement. This will give me fair amount of testing you implement for your project. Example can be seen in [this repo](https://github.com/csula-students/beautiful-data-project-test/).
+
+### So how do you test?
+
+* Dependency Injection
+* Avoid static state
+* Keep each unit small
+
+**Dependency Injection**
+
+Dependency injection doesn't need to always be done by framework like [Guice](https://github.com/google/guice). Put it simple, you can define dependency in your constructors. If you want to get fancy, you might want to use `Factory pattern` to protect your constructors logic being exposed.
+
+All in all, you want to keep your module dependency being defined in clear way so you can mock them.
+
+In example, if you have a piece of code need to take object from database. Instead of:
+
+```java
+public class Test {
+  public Map<String, Integer> countNumberOfWords() {
+    try (Connection c = getConnection()) {
+      String sql = "SELECT * FROM test";
+
+      // use connection and get list of object out
+    }
+  }
+}
+```
+
+to:
+
+```java
+public class Test {
+  public Map<String, Integer> countNumberOfWords(List<Test> tests) {
+    // count number of words using plain old java object
+    // this way, code becomes easily testable and mockable
+  }
+}
+```
+
+Why testings need to be done at design phase?
+
+When designing your functions/methods, you have to think about how to test it. What dependencies do you need for object and so on. If you do testing afterward, it simply becomes impossible to mock any dependency because they are too deep into your code.
 
 ### Further reading
 
