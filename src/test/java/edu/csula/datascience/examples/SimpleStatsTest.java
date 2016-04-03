@@ -21,6 +21,7 @@ public class SimpleStatsTest {
         List<Integer> data = Lists.newArrayList(
             13, 18, 13, 14, 13, 16, 14, 21, 13
         );
+        stats = new SimpleStats(data);
     }
 
     @Test
