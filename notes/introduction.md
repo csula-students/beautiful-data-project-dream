@@ -12,7 +12,7 @@ Welcome to Data Science course again!
 ## Metrics
 
 * [Github team repo][1]
-* Data question - [homework 1](../homeworks/homework1.md)
+* Data question - [homework 1](../notes/homeworks/homework1.md)
 * Pass unit tests
 
 ### What is data science?
