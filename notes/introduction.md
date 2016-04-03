@@ -120,9 +120,11 @@ web crawlers was periodically processed into updated search results.
 2. Install [Gradle](http://gradle.org/)
 > Remember to set up `JAVA_HOME` pointing to where you install your JDK  
 > You should be able to run `gradle -v` to see gradle version
-3. Clone this repository
+3. Install [Git](https://git-scm.com/)
+> You should be able to find git bash under windows if you already install it
+4. Clone this repository
 > `git clone` or use Github client or download as zip whatever you want
-4. Run `gradle test` to see test failing!?
+5. Run `gradle test`
 
 #### Java
 
@@ -173,10 +175,6 @@ Please run `gradle -v` anywhere from terminal. You should see Gradle version as 
 
 Download the course repository, run `gradle hello` after you are done. You should see
 `Hello Data Science` as the console output.
-
-After project is working with `gradle hello` above, please run `gradle eclipse` to convert
-this project to Eclipse project. Then you can import this folder into Eclipse
-(assuming you are using Eclipse) by `File >> Import >> General > Existing project into workspace`
 
 #### Eclipse Gradle plugins
 
