@@ -173,8 +173,12 @@ Please run `gradle -v` anywhere from terminal. You should see Gradle version as 
 
 ### Wrap Up Java Review Exercise
 
-Download the course repository, run `gradle hello` after you are done. You should see
+Clone/download the course repository, run `gradle hello` after you are done. You should see
 `Hello Data Science` as the console output.
+
+Once you have above environment set up, please remove all the `@Ignore` from `src/test/edu/csula/datascience/examples/SimpleStatsTest.java` and pass all the test from there.
+
+What you want out of this class is `gradle test` passes.
 
 #### Eclipse Gradle plugins
 
