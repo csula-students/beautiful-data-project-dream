@@ -36,8 +36,7 @@ Finally, the programming assignments are **non-trivial** for a number of reasons
   * Sunday 17:00 to 19:00 at BIOS-144
   * Online via gitter as available (usually 24/7)
 
-> Please do ask the question early and often than leaving questions at the last moment (e.g. 1am before the homework is due).  
-> Although instructors are generally available for most of time, we are not obligated to keep up with all last moment questions with students right before due date.
+> Please do ask the question early and often than leaving questions at the last moment (e.g. 1am before the homework is due). Although instructors are generally available for most of time, we are not obligated to keep up with all last moment questions with students right before due date.
 
 #### Textbook:
 
