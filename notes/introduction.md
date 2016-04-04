@@ -70,6 +70,10 @@ For the purpose of this course we consider the order of knowledge:
 * Third order: derive inferential information or predicting an outcome that is derived from data
 
 A good question is aim to address third order knowledge! In other word, just download a data set and get the size of data is not consider to be good question!
+This video dives further indepth into how to formulate a good question for Data Science.
+
+[![Orders of Knowledge](imgs/orders_of_knowledge.png)](https://youtu.be/fEVZG5nYzqM)
+
 
 ### Some starting points of data sets
 
