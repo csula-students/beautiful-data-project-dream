@@ -20,6 +20,7 @@ In this quarter, we will publish all course materials on the Github and on [Gitb
 
 * [Announcements](announcements.md)
 * [Syllabus](syllabus.md)
+  * [Schedule](syllabus.md#course-schedule)
 * [Gitbook][1]
 
 [1]: https://www.gitbook.com/book/rcliao/datascience-spring-2016/
