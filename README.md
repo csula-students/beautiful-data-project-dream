@@ -18,6 +18,7 @@ In this quarter, we will publish all course materials on the Github and on [Gitb
 
 ## Quick links
 
+* [Announcements](announcements.md)
 * [Syllabus](syllabus.md)
 * [Gitbook][1]
 

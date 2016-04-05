@@ -10,6 +10,7 @@ In data science, we start the process by asking a good question. In homework 1, 
 
 You will need to answer the followings in your write up:
 
+* What domain (area) will you explore for your project?
 * What is the question you wish to answer?
 * What data do you plan to use to support your statement above?
 * What do you know about the data so far?
@@ -19,8 +20,8 @@ A few characteristics of a good question:
 
 * Clearly defined: question should be able to summarized in single statement.
 * As focus as possible: question should have a narrow focus rather than broad approach.
-* Reasonable data available: you should be able to find data set to support up your question
-* Should be able to reach the third level knowledge - predict the future
+* Reasonable data available: you should be able to find data set to support up your question.
+* Should be able to reach the third level knowledge - predict the future.
 
 ## Tasks
 
