@@ -1,11 +1,9 @@
 package edu.csula.datascience.examples;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * A simple math statistics programming exercise
@@ -20,29 +18,35 @@ public class SimpleStats {
      * Sum of entire list of numbers
      */
     public int sum() {
-        int total = 0;
-        for (Integer item: data) {
-            total += item;
-        }
-        return total;
+        return data.stream()
+            .mapToInt(Integer::intValue)
+            .sum();
     }
 
     /**
      * Average of the numbers
      */
     public double mean() {
-        return sum() / data.size();
+        OptionalDouble avg = data.stream()
+            .mapToInt(Integer::intValue)
+            .average();
+
+        return avg.isPresent() ? avg.getAsDouble() : 0;
     }
 
     /**
      * Sort the numbers, median is the middle value of the sorted list
      */
     public int median() {
-        Collections.sort(data);
-        if (data.size() % 2 != 0) {
-            return data.get(data.size() / 2);
+        List<Integer> copyList = Lists.newArrayList(data);
+        Collections.sort(copyList);
+
+        if (copyList.size() == 0) {
+            return 0;
+        } else if (copyList.size() % 2 != 0) {
+            return copyList.get(copyList.size() / 2);
         } else {
-            return (data.get(data.size() / 2) + data.get(data.size() / 2 + 1)) / 2;
+            return (copyList.get(copyList.size() / 2) + data.get(copyList.size() / 2 - 1)) / 2;
         }
     }
 
