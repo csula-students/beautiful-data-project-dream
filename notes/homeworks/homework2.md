@@ -29,7 +29,6 @@ You don't have to test the whole process from end to end. Instead, think about w
 
 ```java
 // import statements
-
 public class Model {
   private final String id;
   private final String content;
@@ -46,7 +45,6 @@ All these question can be tested with test case like:
 
 ```java
 // import statements
-
 public class ModelTest {
   @Test(expected=CityNotFoundException.class)
   public void TestCity() {
@@ -81,6 +79,10 @@ But how do instructors measure your testing? I will set up the test coverage on 
 * Answer questions in description [2 pts]
 * Implement data collector [5 pts]
 * Testing your own data collector [2 pts]
+
+> P.s. I will randomly asking a few teams to explain to me your code. If you cannot explain your code to me (aka. answer my questions on how you do your programming), I will take points off.  
+> I will announce the team list at the class before the submission deadline.  
+> - Eric
 
 [1]: https://github.com/csula/cs460-fall-2015/blob/master/documents/misc/github-tutorial.md
 [2]: https://try.github.io/levels/1/challenges/1
