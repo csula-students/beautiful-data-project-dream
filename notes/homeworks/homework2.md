@@ -80,9 +80,11 @@ But how do instructors measure your testing? I will set up the test coverage on 
 * Implement data collector [5 pts]
 * Testing your own data collector [2 pts]
 
-> P.s. I will randomly asking a few teams to explain to me your code. If you cannot explain your code to me (aka. answer my questions on how you do your programming), I will take points off.  
-> I will announce the team list at the class before the submission deadline.  
-> - Eric
+> P.s.  
+> I will randomly ask a few teams to explain your code to me.  
+> If you cannot explain your code (aka. answer my questions on how you implemented), I will take points off. Or worse, I will count you as copying code from someone else for not able to explain and thus giving you a **zero**.  
+> The random team list will be announced at the class right before the homework submission deadline.  
+> <p style="text-align: right">- Eric</p>
 
 [1]: https://github.com/csula/cs460-fall-2015/blob/master/documents/misc/github-tutorial.md
 [2]: https://try.github.io/levels/1/challenges/1
