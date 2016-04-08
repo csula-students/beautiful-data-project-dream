@@ -17,6 +17,7 @@ This homework will involve you to program your own acquiring process. It means i
 * What question(s) did you decide to work on as a team?
 * What is your data source(s)?
 * How long does it take for you to download data? Have you download complete data set?
+* How large is your data (size wise and number of records wise)?
 * Do you face any dirty data issue? If you do, how did you clean up your data?
 * How do you store the data you downloaded?
 
