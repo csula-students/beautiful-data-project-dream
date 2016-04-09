@@ -1,16 +1,20 @@
 # Homework 2
 
-> This is your first team project. Please do form a team before you start your homework 2!
+> This is your first team project. Please do form a team of 2 to 3 before you start your homework 2!
+
+## Due data
+
+<b style="color: #F44336; font-size: 17px;">April 24th midnight</b>
 
 ## Description
 
 In this homework, your job is to acquire data by implementing our data collector interface with your own detail. This may involves you to download data using Http request library, to do web scraping or to make some API calls.
 
-This implementation may vary a lot between all teams depending on the data source you are getting from. In example, a team who wants to get Twitter tweets to compute trending will have different implementation than a team who is getting data from bunch of sensors!
+This implementation may vary a lot between all teams depending on the data source you are getting from. For example, a team who wants to get Twitter tweets to compute trending will have different implementation than a team who is getting data from bunch of sensors!
 
 Since this homework is your first **team homework**, you will need to use Github by starting your team repository. This implies you will need to be able to use Git effectively enough to commit and push code to collaborate with your teammate(s) and instructor(s). If you find yourself having trouble of doing git, please utilize [this article][1] for your benefit or play with it on [this link][2]!
 
-This homework will involve you to program your own acquiring process. It means it is important for you to follow up with your questions from homework 1. Now, since you will be all working in a team, you will need to decide to work on question or questions from your team members. Once you decide to do so, please answer the question below so that we know which question you are working on.
+This homework will involve you to program your own acquiring process, which is important for you to follow up with your questions from homework 1. You will need to choose the question(s) to work for this team project with your team members. Once your team decided the question(s) from homework 1, please answer the questions below so we know what type of project your team is working on.
 
 **Questions**
 
@@ -61,16 +65,18 @@ But how do instructors measure your testing? I will set up the test coverage on 
 ## Tasks
 
 * Create team repo
-* Push initial commit
+* Push commits to your own repo
 * Implement your data collector
-* Answer questions in description
+* Acquire data
+* Store data in local file storage
+* Answer questions in description of Pull Request
 
 ## Deliverables
 
 * CSNS submission including team info and link to your repo
 * Github pull request
   * Answer questions in the description of pull request
-  * Implement data collector
+  * Implement data collector interfaces
   * Test your own data collector
 
 ## Grading rubric
@@ -78,7 +84,14 @@ But how do instructors measure your testing? I will set up the test coverage on 
 * Github pull request [1 pt]
 * Answer questions in description [2 pts]
 * Implement data collector [5 pts]
+  * Implements **Collector** interface to download data
+  * Implements **Source** interface to provide data
+  * Save data into a file
+> You should be able to run this data collector yourself to download data.  
+> This is where your main logic lives  
+
 * Testing your own data collector [2 pts]
+> Have at least 30% code coverage
 
 > P.s.  
 > I will randomly ask a few teams to explain your code to me.  
