@@ -46,7 +46,7 @@ public class SimpleStats {
         } else if (copyList.size() % 2 != 0) {
             return copyList.get(copyList.size() / 2);
         } else {
-            return (copyList.get(copyList.size() / 2) + data.get(copyList.size() / 2 - 1)) / 2;
+            return (copyList.get(copyList.size() / 2) + copyList.get(copyList.size() / 2 - 1)) / 2;
         }
     }
 
