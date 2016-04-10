@@ -77,6 +77,8 @@ In nutshell, your program need to be able to load this data from its source to y
 
 ### Data cleaning
 
+The process of cleaning up acquired data is often referred to as `data munging`.  On the surface, data munging is simply trying to make sense and organize acquired data into structured data.
+
 After initial extraction, you will find out not all data are ideal sooner or later. For instance, there may be missing records. Some data might have inconsistency issues and so on.
 
 This issue is what I called dirty data.

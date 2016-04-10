@@ -9,17 +9,17 @@ import java.util.*;
  * A simple math statistics programming exercise
  */
 public class SimpleStats {
-    private final List<Integer> data;
-    public SimpleStats(List<Integer> data) {
+    private final List<Double> data;
+    public SimpleStats(List<Double> data) {
         this.data = data;
     }
 
     /**
      * Sum of entire list of numbers
      */
-    public int sum() {
+    public double sum() {
         return data.stream()
-            .mapToInt(Integer::intValue)
+            .mapToDouble(Double::doubleValue)
             .sum();
     }
 
@@ -28,7 +28,7 @@ public class SimpleStats {
      */
     public double mean() {
         OptionalDouble avg = data.stream()
-            .mapToInt(Integer::intValue)
+            .mapToDouble(Double::doubleValue)
             .average();
 
         return avg.isPresent() ? avg.getAsDouble() : 0;
@@ -37,45 +37,44 @@ public class SimpleStats {
     /**
      * Sort the numbers, median is the middle value of the sorted list
      */
-    public int median() {
-        List<Integer> copyList = Lists.newArrayList(data);
-        Collections.sort(copyList);
+    public double median() {
+        Collections.sort(data);
 
-        if (copyList.size() == 0) {
+        if (data.size() == 0) {
             return 0;
-        } else if (copyList.size() % 2 != 0) {
-            return copyList.get(copyList.size() / 2);
+        } else if (data.size() % 2 != 0) {
+            return data.get(data.size() / 2);
         } else {
-            return (copyList.get(copyList.size() / 2) + copyList.get(copyList.size() / 2 - 1)) / 2;
+            return (data.get(data.size() / 2) + data.get(data.size() / 2 - 1)) / 2;
         }
     }
 
     /**
      * The value of max minus min
      */
-    public int range() {
+    public double range() {
         return max() - min();
     }
 
     /**
      * The number that repeats the most in the numbers
      */
-    public int mode() {
-        Map<Integer, Integer> count = Maps.newTreeMap();
-        int result = -1;
+    public double mode() {
+        Map<Double, Integer> count = Maps.newTreeMap();
+        double result = -1;
 
-        for (Integer item: data) {
+        for (Double item: data) {
             count.put(
                 item,
                 count.getOrDefault(item, 0) + 1
             );
         }
 
-        Iterator<Map.Entry<Integer, Integer>> iterator = count.entrySet().iterator();
+        Iterator<Map.Entry<Double, Integer>> iterator = count.entrySet().iterator();
 
         Integer maxCount = 0;
         while (iterator.hasNext()) {
-            Map.Entry<Integer, Integer> entry = iterator.next();
+            Map.Entry<Double, Integer> entry = iterator.next();
 
             if (maxCount < entry.getValue()) {
                 maxCount = entry.getValue();
@@ -89,14 +88,14 @@ public class SimpleStats {
     /**
      * Maximum number of the numbers
      */
-    public int max() {
+    public double max() {
         return Collections.max(data);
     }
 
     /**
      * Minimum number of the numbers
      */
-    public int min() {
+    public double min() {
         return Collections.min(data);
     }
 }
