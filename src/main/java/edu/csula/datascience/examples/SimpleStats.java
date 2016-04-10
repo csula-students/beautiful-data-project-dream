@@ -38,15 +38,14 @@ public class SimpleStats {
      * Sort the numbers, median is the middle value of the sorted list
      */
     public double median() {
-        List<Double> copyList = Lists.newArrayList(data);
-        Collections.sort(copyList);
+        Collections.sort(data);
 
-        if (copyList.size() == 0) {
+        if (data.size() == 0) {
             return 0;
-        } else if (copyList.size() % 2 != 0) {
-            return copyList.get(copyList.size() / 2);
+        } else if (data.size() % 2 != 0) {
+            return data.get(data.size() / 2);
         } else {
-            return (copyList.get(copyList.size() / 2) + data.get(copyList.size() / 2 - 1)) / 2;
+            return (data.get(data.size() / 2) + data.get(data.size() / 2 - 1)) / 2;
         }
     }
 
