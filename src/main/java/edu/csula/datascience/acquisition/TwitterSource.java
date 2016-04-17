@@ -62,8 +62,9 @@ public class TwitterSource implements Source<Status> {
                 list.addAll(tweets);
             } while ((query = result.nextQuery()) != null);
         } catch (TwitterException e) {
-            // TODO: handle twitter rate limit
+            // Catch exception to handle rate limit and retry
             e.printStackTrace();
+            System.out.println("Got twitter exception. Current min id " + minId);
             try {
                 Thread.sleep(e.getRateLimitStatus()
                     .getSecondsUntilReset() * 1000);
@@ -71,7 +72,6 @@ public class TwitterSource implements Source<Status> {
             } catch (InterruptedException e1) {
                 e1.printStackTrace();
             }
-            System.out.println("Got twitter exception. Current min id " + minId);
         }
 
         return list;
