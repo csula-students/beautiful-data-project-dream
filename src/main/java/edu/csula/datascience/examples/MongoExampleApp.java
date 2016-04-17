@@ -21,7 +21,7 @@ import static com.mongodb.client.model.Sorts.descending;
 public class MongoExampleApp {
     public static void main (String[] args) {
         // establish database connection to MongoDB
-        MongoClient mongoClient = new MongoClient();
+        MongoClient mongoClient = new MongoClient("db");
         // select `bd-example` as testing database
         MongoDatabase database = mongoClient.getDatabase("bd-example");
 
