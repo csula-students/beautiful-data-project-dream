@@ -25,7 +25,7 @@ public class CollectorTest {
 
     @Test
     public void mungee() throws Exception {
-        List<SimpleModel> list = (List<SimpleModel>) collector.mungee(source);
+        List<SimpleModel> list = (List<SimpleModel>) collector.mungee(source.next());
         List<SimpleModel> expectedList = Lists.newArrayList(
             new SimpleModel("2", "content2"),
             new SimpleModel("3", "content3")

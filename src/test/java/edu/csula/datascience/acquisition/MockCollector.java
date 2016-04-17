@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
  */
 public class MockCollector implements Collector<SimpleModel, MockData> {
     @Override
-    public Collection<SimpleModel> mungee(Source<MockData> src) {
+    public Collection<SimpleModel> mungee(Collection<MockData> src) {
         // in your example, you might need to check src.hasNext() first
-        return src.next()
+        return src
             .stream()
             .filter(data -> data.getContent() != null)
             .map(SimpleModel::build)
