@@ -1,5 +1,6 @@
 package edu.csula.datascience.acquisition;
 
+import com.google.common.collect.Lists;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,19 +24,18 @@ public class CollectorTest {
     }
 
     @Test
-    public void download() throws Exception {
-        List<SimpleModel> list = (List<SimpleModel>) collector.download(source);
+    public void mungee() throws Exception {
+        List<SimpleModel> list = (List<SimpleModel>) collector.mungee(source);
+        List<SimpleModel> expectedList = Lists.newArrayList(
+            new SimpleModel("2", "content2"),
+            new SimpleModel("3", "content3")
+        );
 
-        Assert.assertEquals(list.size(), 3);
+        Assert.assertEquals(list.size(), 2);
 
-        for (int i = 0; i < 3; i ++) {
-            Assert.assertEquals(list.get(i).getId(), "" + (i + 1));
-            Assert.assertEquals(list.get(i).getContent(), "content" + (i + 1));
+        for (int i = 0; i < 2; i ++) {
+            Assert.assertEquals(list.get(i).getId(), expectedList.get(i).getId());
+            Assert.assertEquals(list.get(i).getContent(), expectedList.get(i).getContent());
         }
-    }
-
-    @Test
-    public void save() throws Exception {
-        Assert.assertTrue(collector.save(collector.download(source)));
     }
 }

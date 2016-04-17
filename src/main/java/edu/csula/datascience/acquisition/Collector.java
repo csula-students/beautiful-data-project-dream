@@ -8,7 +8,7 @@ import java.util.Collection;
  * It should be able to download data from source and save data.
  */
 public interface Collector<T, N> {
-    Collection<T> download(Source<N> src);
+    Collection<T> mungee(Source<N> src);
 
-    boolean save(Collection<T> data);
+    void save(Collection<T> data);
 }
