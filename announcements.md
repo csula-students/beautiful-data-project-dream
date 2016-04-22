@@ -12,7 +12,7 @@ Here is a scenario to consider:
 
 > At the end of the quarter a student said to the instructor: "sir, my grade for this class is very close, can you please give me some extra point?"
 
-The answer is obviously no, because this student has not participate or ask for help during the quarter.  Why this is sad is that the students could have seen the answer to a commonly asked question.  What is really tragic is that the student has to plead for a grade that s/he did not earn. 
+The answer is obviously no, because this student did not participate nor asked for help during the quarter.  This is sad because that the students could have seen the answer to a commonly asked question.  What is really tragic is that the student has to plead for a grade that s/he did not earn. 
 
 #### 16 April 2016
 
