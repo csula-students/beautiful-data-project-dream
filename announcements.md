@@ -1,11 +1,20 @@
 # Data Science 2016
 
-#### 4 April 2016
+#### 21 April 2016
 
-- Video Lecture on [Orders of Knowledge](https://youtu.be/fEVZG5nYzqM) has been posted.  Please review this video for the first quiz and the first homework assignment.
-- [Homework 1](notes/homeworks/homework1.md) has been posted.  Note that there are a few updates coming.  
+We notice that there are only 63 students on gitter while there are over 90 students in the class.  This is very alarming and very concerning for a number of reasons:
 
-#### 16 Aprl 2016
+1. Students miss out on discussions and questions that can potentially help them.
+2. Students are not participating in class discussion.
+3. Students are not asking for help.
+
+Here is a scenario to consider:
+
+> At the end of the quarter a student said to the instructor: "sir, my grade for this class is very close, can you please give me some extra point?"
+
+The answer is obviously no, because this student has not participate or ask for help during the quarter.  Why this is sad is that the students could have seen the answer to a commonly asked question.  What is really tragic is that the student has to plead for a grade that s/he did not earn. 
+
+#### 16 April 2016
 
 Here are a few comments on homework 1:
 
@@ -25,3 +34,7 @@ Here are a few comments on homework 1:
 Ultimately it's up to you.  However, picking any of these three will receive extra scrutiny because someone is doing it, sports analytic is hard (borderline gambling), and stock prediction is a pipe dream.
 
 
+#### 4 April 2016
+
+- Video Lecture on [Orders of Knowledge](https://youtu.be/fEVZG5nYzqM) has been posted.  Please review this video for the first quiz and the first homework assignment.
+- [Homework 1](notes/homeworks/homework1.md) has been posted.  Note that there are a few updates coming.  
