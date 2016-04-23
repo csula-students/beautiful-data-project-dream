@@ -15,8 +15,12 @@ What about data comes in with high velocity? How do we store them and analyze th
   * [Docker][3]
 * 4/24
   * [Docker][3]
-  * Set up Elastic Search
-  * Initial exploration
+  * Introduction of Elastic Search
+  * Set up Elastic Search on local dev machine
+  * Learn Elastic Search
+  * Set up Elastic Search Java Client
+  * Set up Elastic Search on docker container
+  * Initial exploration with Elastic Search and Kibana
   * [Optional] HDFS
 
 ## Metrics
@@ -214,15 +218,10 @@ In this class, we will be using `docker`, `docker-machine` and `docker-compose`.
 Once you have docker-machine installed above, run the following command:
 
 ```sh
-# eric @ Erics-MacBook-Pro in ~/Developments/csula/datascience-spring-2016 on git:master x [16:26:56]
+# if you don't docker-machine already
+# for linux, you don't need docker-machine
+$ docker-machine create --driver virtualbox default
 $ docker-machine start
-Starting "default"...
-(default) Check network to re-create if needed...
-(default) Waiting for an IP...
-Machine "default" was started.
-Waiting for SSH to be available...
-Detecting the provisioner...
-Started machines may have new IP addresses. You may need to re-run the `docker-machine env` command.
 ```
 
 You should be able to do `docker-machine status` to see status like below:
@@ -233,42 +232,26 @@ $ docker-machine status
 Running
 ```
 
-Now you have to use `docker-machine env` to set up your environment variable like below:
+Now you have to use `docker-machine env` and run **the last line** to set up your environment variable like below:
 
 ```sh
 # eric @ Erics-MacBook-Pro in ~/Developments/csula/datascience-spring-2016 on git:master x [16:31:04]
 $ docker-machine env
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/eric/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
+# ...
 # Run this command to configure your shell:
 # eval $(docker-machine env)
-```
-
-Usually after `docker-machine env`, you will also need to run `eval $(docker-machine env)` above to actually set up tne environment variables
-
-```sh
-# eric @ Erics-MacBook-Pro in ~/Developments/csula/datascience-spring-2016 on git:master x [16:31:59]
-$ eval $(docker-machine env)
+###### for windows, you have a different command above
 ```
 
 With above setting to be done, your docker-machine is now ready to run docker!
 
 ### Docker Engine
 
-When docker machine is ready, you can run `docker build --rm=true -t big data .` and you should see something like below:
+When docker machine is ready, you can run `docker build --rm=true -t big-data .` and you should see something like below:
 
 ```sh
+$ docker build -rm=true -t big-data .
 # ...
-BUILD SUCCESSFUL
-
-Total time: 1 mins 9.239 secs
-
-This build could be faster, please consider using the Gradle Daemon: https://docs.gradle.org/2.12/userguide/gradle_daemon.html
- ---> 67fb6937cd13
-Removing intermediate container 6a7e37e6ac76
-Step 9 : ENTRYPOINT java -jar /usr/local/bin/big-data.jar
  ---> Running in f40fce6f0d24
 
  ---> 9d07afd612cd
@@ -279,10 +262,9 @@ Successfully built 9d07afd612cd
 Above command will build up the **docker image** for your docker to run later with command `docker run --rm=true big-image`.
 
 ```sh
-# eric @ Erics-MacBook-Pro in ~/Developments/csula/datascience-spring-2016 on git:master x [18:24:00] C:2
 $ docker run --rm=true big-data
 Hello Data Science
-``
+```
 
 ### Docker terminology
 
@@ -290,13 +272,16 @@ Hello Data Science
 > An process of building Docker image based on Dockerfile
 
 * Dockerfile
-> A Dockerfile is a text document that contains all the commands you would normally execute manually in order to build a Docker image. Docker can build images automatically by reading the instructions from a Dockerfile.
+> A Dockerfile is a text document that contains all the commands you would normally execute manually in order to build a Docker image. Docker can build images automatically by reading the instructions from a Dockerfile.  
+> You can check out our course repository `Dockerfile` for example
 
 * Image
-> An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.
+> An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.  
+> Use `docker images` to find out more about images we have built so far
 
 * Container
-> Runtime instance of docker image
+> Runtime instance of docker image  
+> Use `docker ps` to find out what is current running
 
 * Compose
 >  With compose, you define a multi-container application in a single file, then spin your application up in a single command which does everything that needs to be done to get it running.
@@ -310,6 +295,234 @@ It would be nicer if we can build our application once and run it everywhere.
 Thus, it is great time to introduce docker!
 
 For example, we ran MongoDB earlier with only on our host machine. Lets run the same MongoDB instance on Docker with `docker-compose`
+
+### Git detour
+
+Some students asked about how do you get the latest code from this repository while on the same time pushing code to your own team repository.
+
+Well, one way to do it is through manual copy and paste the code. This way you don't need to learn Git but you have to do it all manually and can be prone to errors.
+
+I'd suggest to use the following approach:
+
+```sh
+# list a remote you have
+$ git remote -v
+
+# add the other remote for your local git directory
+# lets assume we have course repo url listed above
+$ git remote add project {url}
+
+# When you are done adding the remote, check it with
+$ git remote -v
+
+# And then you can get the latest course code by
+$ git fetch && git pull origin master
+
+# there might be some merge-conflicts happening after pull
+# When in doubt, you can checkout course repo side of code only by
+# $ git checkout --theirs .
+
+# To push to your team repository
+$ git push project {fromBranchName:toBranchName}
+```
+
+### Docker Compose
+
+Alright, we have build docker successfully now. What is next?
+
+The utility of docker starts only now. In our project, we probably need to include a couple services like MongoDB or Elastic Search. It's very hard to ask all deverlopers in your team to set up programming environment at all time.
+
+Using docker, we can set up the tools with our application in one command `docker-compose up`
+
+This `docker-compose up` will build and run multiple contains with the images we defined in the `docker-compose.yml`
+
+### Gradle shadow jar
+
+Wait, you meant Gradle can does more things than dependencies management!? What else can Gradle provide to us?
+
+Gradle can also help to build the jar file just like Maven. In this course repository, we are using ShadowJar plugin to build our one-fat-jar.
+
+Once we finish building this one fat jar, our Dockerfile becomes trivial to run the jar file. (See last line of Dockerfile).
+
+For example, if we want to run MongoDB along with our example MongoDB example app, we will need to change the following line to:
+
+```java
+MongoClient mongoClient = new MongoClient();
+```
+
+to
+
+```java
+MongoClient mongoClient = new MongoClient("db");
+```
+
+Why?
+
+We have to tell our application to connect to MongoDB running in different container.
+
+In usual dev ops world, you will need to do your own manual networking. With docker, the networking process will be simplified by the docker-compose.
+
+Now you can change our main class under `build.gradle` line 21 to MongoDB example
+
+### Elastic Search
+
+Elastic search ... you know. For searching.
+
+### Introduction
+
+* Open source search engine
+* Built on top of Apache Lucene
+* JSON based
+* Scheme free
+* Distributed
+* Multi-tenancy
+* API Centric & REST
+
+### What can it do?
+
+* Unstructured & structured search
+* Analytics
+* Combine
+
+### Get started
+
+* Download [Elastic Search distribution](https://www.elastic.co/downloads/elasticsearch)
+
+```sh
+.
+├── LICENSE.txt
+├── NOTICE.txt
+├── README.textile
+├── bin                    # executable scripts
+│   ├── elasticsearch
+│   ├── plugin
+│   └── ...
+├── config                 # node configuration
+│   ├── elasticsearch.yml
+│   └── logging.yml
+├── lib
+│   ├── elasticsearch-2.2.0.jar
+│   └── ...
+└── ...
+```
+
+* Run `elasticsearch` executable
+
+```sh
+# eric at Erics-MacBook-Pro.local in ~/Downloads/elasticsearch-2.2.0 [22:37:14]
+$ ./bin/elasticsearch
+[2016-03-02 22:37:22,354][INFO ][node                     ] [NFL Superpro] version[2.2.0], pid[66651], build[8ff36d1/2016-01-27T13:32:39Z]
+[2016-03-02 22:37:22,354][INFO ][node                     ] [NFL Superpro] initializing ...
+[2016-03-02 22:37:22,937][INFO ][plugins                  ] [NFL Superpro] modules [lang-expression, lang-groovy], plugins [], sites []
+[2016-03-02 22:37:22,967][INFO ][env                      ] [NFL Superpro] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [166gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2016-03-02 22:37:22,967][INFO ][env                      ] [NFL Superpro] heap size [989.8mb], compressed ordinary object pointers [true]
+[2016-03-02 22:37:24,923][INFO ][node                     ] [NFL Superpro] initialized
+[2016-03-02 22:37:24,923][INFO ][node                     ] [NFL Superpro] starting ...
+[2016-03-02 22:37:25,020][INFO ][transport                ] [NFL Superpro] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2016-03-02 22:37:25,028][INFO ][discovery                ] [NFL Superpro] elasticsearch/RMR814SUQ-SVatuaP1i31A
+[2016-03-02 22:37:28,057][INFO ][cluster.service          ] [NFL Superpro] new_master {NFL Superpro}{RMR814SUQ-SVatuaP1i31A}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2016-03-02 22:37:28,075][INFO ][http                     ] [NFL Superpro] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2016-03-02 22:37:28,075][INFO ][node                     ] [NFL Superpro] started
+[2016-03-02 22:37:28,099][INFO ][gateway                  ] [NFL Superpro] recovered [0] indices into cluster_state
+```
+
+* confirm working by opening in browser under http://localhost:9200
+
+```sh
+# eric at Erics-MacBook-Pro.local in ~/Downloads/elasticsearch-2.2.0 [22:38:19]
+$ curl http://localhost:9200/\?pretty
+{
+  "name" : "NFL Superpro",
+  "cluster_name" : "elasticsearch",
+  "version" : {
+    "number" : "2.2.0",
+    "build_hash" : "8ff36d139e16f8720f2947ef62c8167a888992fe",
+    "build_timestamp" : "2016-01-27T13:32:39Z",
+    "build_snapshot" : false,
+    "lucene_version" : "5.4.1"
+  },
+  "tagline" : "You Know, for Search"
+}
+```
+
+### Debugging in Sense
+
+For people who doesn't have `curl` installed locally. *Ahem* windows users, I suggested you to install sense so that you can execute curl like command without worry about curl command.
+
+* Install [Kibana](https://www.elastic.co/downloads/kibana)
+* Run `./bin/kibana plugin --install elastic/sense` under kibana folder to install sense
+* Confirm Sense working by http://localhost:5601/app/sense?load_from=http://www.elastic.co/guide/en/elasticsearch/guide/current/snippets/010_Intro/10_Info.json
+
+### Communicate with ES
+
+* [Java Client](https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/index.html)
+* REST
+
+> We will focus on the REST to explain Elastic Search briefly first and then implement in Java Client later
+
+### Quick Review on RESTful
+
+* CRUD
+
+```
+* POST   => Create
+* GET    => Read
+* PUT    => Update
+* DELETE => DELETE
+```
+
+### ES Terminologies from RDBS point of view
+
+```
+Relational DB  ⇒ Databases ⇒ Tables ⇒ Rows      ⇒ Columns
+Elasticsearch  ⇒ Indices   ⇒ Types  ⇒ Documents ⇒ Fields
+```
+
+### Learn by examples using Sense
+
+#### Example of write
+
+```
+http://localhost:5601/app/sense?load_from=http://www.elastic.co/guide/en/elasticsearch/guide/current/snippets/010_Intro/25_Index.json
+```
+
+#### Example of read
+
+```
+http://localhost:5601/app/sense?load_from=http://www.elastic.co/guide/en/elasticsearch/guide/current/snippets/010_Intro/30_Get.json
+```
+
+#### Example of search lite
+
+```
+http://localhost:5601/app/sense?load_from=http://www.elastic.co/guide/en/elasticsearch/guide/current/snippets/010_Intro/30_Simple_search.json
+```
+
+#### More complex search
+
+```
+http://localhost:5601/app/sense?load_from=http://www.elastic.co/guide/en/elasticsearch/guide/current/snippets/010_Intro/30_Query_DSL.json
+```
+
+### Searching
+
+While many searches will just work out of the box, to use Elasticsearch to its full potential, you need to understand three subjects:
+
+* Mapping
+
+    How the data in each field is interpreted
+
+* Analysis
+
+    How full text is processed to make it searchable
+
+* Query DSL
+
+    The flexible, powerful query language used by Elasticsearch
+
+### Java Elastic Search Client
+
+Go to [Java Client](https://www.elastic.co/guide/en/elasticsearch/client/java-api/current/index.html) to get started.
 
 [1]: https://www.mongodb.org/downloads
 [2]: https://docs.mongodb.org/getting-started/java/
