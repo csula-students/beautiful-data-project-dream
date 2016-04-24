@@ -6,7 +6,7 @@ package edu.csula.datascience.examples;
 public class Hello2 {
     private final String name;
     public static void main(String[] args) {
-        Hello2 ds = new Hello2("Data Science2");
+        Hello2 ds = new Hello2("Awesome Data Science");
 
         System.out.println(String.format("Hello %s", ds.getName()));
     }
