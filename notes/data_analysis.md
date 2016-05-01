@@ -4,13 +4,16 @@ Now we have a large amount of data. How do we make sense out of this set of data
 
 ## Objectives
 
-* Elastic Search Query
-* MongoDB Aggregation
-  * Sum, count, avg ...
-  * Map Reduce
-* Python
-  * Common math libraries
-  * Machine learning
+* 5/1
+  * Elastic Search Query/Aggregation
+* 5/8
+  * MongoDB Aggregation
+    * Sum, count, avg ...
+    * Map Reduce
+* 5/15, 5/22
+  * Python
+    * Common math libraries
+    * Machine learning
 * [Optional knowledge] Hadoop
 
 ## Metrics
@@ -25,7 +28,7 @@ Now we have a large amount of data. How do we make sense out of this set of data
 
 Due to some confusions from students, I want to clarify docker a bit on architecture stand point.
 
-![docker architecture graph](imgs/docker_architecture.svg)
+![docker architecture graph](imgs/docker_architecture.png)
 Credit: https://docs.docker.com/engine/understanding-docker/
 
 ## Exploratory Data Analysis
@@ -57,6 +60,8 @@ In this course, we will continue with Elastic Search to perform aggregations and
 Later on, we will be using MongoDB to learn map reduce concept (again to perform aggregations).
 
 Further, we will also spend two weeks learning Python and how to use Python to do detail analysis or machine learning for better predict model.
+
+John, by next week, will talk more in depth about EDA in video. Stay tuned!
 
 ## Elastic Search Query In Depth
 
@@ -559,3 +564,7 @@ You can still perform the search like `comments.name` (this is why you cannot ha
 **Parent/child relationship**
 
 Due to the time constraint, we will skip this part of notes.
+
+## Kibana in action
+
+Demo
