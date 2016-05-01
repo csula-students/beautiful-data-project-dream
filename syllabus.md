@@ -185,13 +185,13 @@ The schedule below is tentative and is subject to change.
 | 1 [4/3]       | [Introduction][1] | Form a team, set up environment |
 | 2 [4/10]      | [Data Acquisition][2] | **Homework 1** & **Quiz 1** |
 | 3 [4/17]      | [Data Storage][3] | Install MongoDB |
-| 4 [4/24]      | [Data Storage][3] | Install Elastic Search **Homework 2** |
+| 4 [4/24]      | [Data Storage][3] | Install Elastic Search, docker **Homework 2** |
 | 5 [5/1]       | [Data Analysis][4] | Elastic Search Query **Quiz 2** |
-| 6 [5/8]       | [Data Analysis][4] | MongoDB MapReduce **Homework 3** |
+| 6 [5/8]       | [Data Analysis][4] | MongoDB MapReduce **No class but remote video and notes** |
 | 7 [5/15]      | [Data Analysis][4] | Install Python **Quiz 3** |
-| 8 [5/22]      | [Data Analysis][4] | Machine learning |
+| 8 [5/22]      | [Data Analysis][4] | Intro to Machine learning **Homework 3** |
 | 9 [5/29]      | [Data Visualization][5] | JavaScript and D3 **Quiz 4** |
-| 10 [6/5]      | [Data Visualization][5] | Install Docker **Homework 4** |
+| 10 [6/5]      | [Data Visualization][5] | More visualization **Homework 4** |
 | Final [6/14]     | Launch date | Ready for demo! |
 
 [1]: notes/introduction.md
@@ -201,5 +201,3 @@ The schedule below is tentative and is subject to change.
 [5]: notes/data_visualization.md
 
 This syllabus is subjected to change.  In the event of an update, we will notify students and provide a rationale for the adjustment.
-
-Last update: 2 April 2016

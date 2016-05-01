@@ -28,7 +28,7 @@ Now we have a large amount of data. How do we make sense out of this set of data
 
 Due to some confusions from students, I want to clarify docker a bit on architecture stand point.
 
-![docker architecture graph](imgs/docker_architecture.png)
+![docker architecture graph](imgs/docker_architecture.png)  
 Credit: https://docs.docker.com/engine/understanding-docker/
 
 ## Exploratory Data Analysis
