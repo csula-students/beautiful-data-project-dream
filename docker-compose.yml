@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  app:
+    build: .
+    networks:
+      - back-tier
+  db:
+    image: mongo:3.2
+    container_name: db
+    volumes:
+      - "db-data:/data/db"
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  back-tier:
