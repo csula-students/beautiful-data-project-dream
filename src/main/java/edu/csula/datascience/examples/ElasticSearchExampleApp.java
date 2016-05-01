@@ -44,107 +44,105 @@ public class ElasticSearchExampleApp {
             .put("path.home", "elasticsearch-data")).node();
         Client client = node.client();
 
-//        // as usual process to connect to data source, we will need to set up
-//        // node and client// to read CSV file from the resource folder
-//        File csv = new File(
-//            ClassLoader.getSystemResource("GlobalLandTemperaturesByState.csv")
-//                .toURI()
-//        );
-//
-//        // create bulk processor
-//        BulkProcessor bulkProcessor = BulkProcessor.builder(
-//            client,
-//            new BulkProcessor.Listener() {
-//                @Override
-//                public void beforeBulk(long executionId,
-//                                       BulkRequest request) {
-//                }
-//
-//                @Override
-//                public void afterBulk(long executionId,
-//                                      BulkRequest request,
-//                                      BulkResponse response) {
-//                }
-//
-//                @Override
-//                public void afterBulk(long executionId,
-//                                      BulkRequest request,
-//                                      Throwable failure) {
-//                    System.out.println("Facing error while importing data to elastic search");
-//                    failure.printStackTrace();
-//                }
-//            })
-//            .setBulkActions(10000)
-//            .setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
-//            .setFlushInterval(TimeValue.timeValueSeconds(5))
-//            .setConcurrentRequests(1)
-//            .setBackoffPolicy(
-//                BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3))
-//            .build();
-//
-//        // Gson library for sending json to elastic search
-//        Gson gson = new Gson();
-//
-//        try {
-//            // after reading the csv file, we will use CSVParser to parse through
-//            // the csv files
-//            CSVParser parser = CSVParser.parse(
-//                csv,
-//                Charset.defaultCharset(),
-//                CSVFormat.EXCEL.withHeader()
-//            );
-//
-//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//
-//            // for each record, we will insert data into Elastic Search
-//            parser.forEach(record -> {
-//                // cleaning up dirty data which doesn't have time or temperature
-//                if (
-//                    !record.get("dt").isEmpty() &&
-//                    !record.get("AverageTemperature").isEmpty()
-//                ) {
-//                    Temperature temp = new Temperature(
-//                        record.get("dt"),
-//                        Double.valueOf(record.get("AverageTemperature")),
-//                        record.get("State"),
-//                        record.get("Country")
-//                    );
-//
-//                    bulkProcessor.add(new IndexRequest(indexName, typeName)
-//                        .source(gson.toJson(temp))
-//                    );
-//                }
-//            });
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        // as usual process to connect to data source, we will need to set up
+        // node and client// to read CSV file from the resource folder
+        File csv = new File(
+            ClassLoader.getSystemResource("GlobalLandTemperaturesByState.csv")
+                .toURI()
+        );
+
+        // create bulk processor
+        BulkProcessor bulkProcessor = BulkProcessor.builder(
+            client,
+            new BulkProcessor.Listener() {
+                @Override
+                public void beforeBulk(long executionId,
+                                       BulkRequest request) {
+                }
+
+                @Override
+                public void afterBulk(long executionId,
+                                      BulkRequest request,
+                                      BulkResponse response) {
+                }
+
+                @Override
+                public void afterBulk(long executionId,
+                                      BulkRequest request,
+                                      Throwable failure) {
+                    System.out.println("Facing error while importing data to elastic search");
+                    failure.printStackTrace();
+                }
+            })
+            .setBulkActions(10000)
+            .setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
+            .setFlushInterval(TimeValue.timeValueSeconds(5))
+            .setConcurrentRequests(1)
+            .setBackoffPolicy(
+                BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3))
+            .build();
+
+        // Gson library for sending json to elastic search
+        Gson gson = new Gson();
+
+        try {
+            // after reading the csv file, we will use CSVParser to parse through
+            // the csv files
+            CSVParser parser = CSVParser.parse(
+                csv,
+                Charset.defaultCharset(),
+                CSVFormat.EXCEL.withHeader()
+            );
+
+            // for each record, we will insert data into Elastic Search
+            parser.forEach(record -> {
+                // cleaning up dirty data which doesn't have time or temperature
+                if (
+                    !record.get("dt").isEmpty() &&
+                    !record.get("AverageTemperature").isEmpty()
+                ) {
+                    Temperature temp = new Temperature(
+                        record.get("dt"),
+                        Double.valueOf(record.get("AverageTemperature")),
+                        record.get("State"),
+                        record.get("Country")
+                    );
+
+                    bulkProcessor.add(new IndexRequest(indexName, typeName)
+                        .source(gson.toJson(temp))
+                    );
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         // simple search by field name "state" and find Washington
-//        SearchResponse response = client.prepareSearch("bd-example")
-//            .setTypes("temperatures")
-//            .setSearchType(SearchType.DEFAULT)
-//            .setQuery(QueryBuilders.matchQuery("state", "Washington"))   // Query
-//            .setScroll(new TimeValue(60000))
-//            .setSize(60).setExplain(true)
-//            .execute()
-//            .actionGet();
-//
-//        //Scroll until no hits are returned
-//        while (true) {
-//
-//            for (SearchHit hit : response.getHits().getHits()) {
-//                System.out.println(hit.sourceAsString());
-//            }
-//            response = client
-//                .prepareSearchScroll(response.getScrollId())
-//                .setScroll(new TimeValue(60000))
-//                .execute()
-//                .actionGet();
-//            //Break condition: No hits are returned
-//            if (response.getHits().getHits().length == 0) {
-//                break;
-//            }
-//        }
+        SearchResponse response = client.prepareSearch(indexName)
+            .setTypes(typeName)
+            .setSearchType(SearchType.DEFAULT)
+            .setQuery(QueryBuilders.matchQuery("state", "Washington"))   // Query
+            .setScroll(new TimeValue(60000))
+            .setSize(60).setExplain(true)
+            .execute()
+            .actionGet();
+
+        //Scroll until no hits are returned
+        while (true) {
+
+            for (SearchHit hit : response.getHits().getHits()) {
+                System.out.println(hit.sourceAsString());
+            }
+            response = client
+                .prepareSearchScroll(response.getScrollId())
+                .setScroll(new TimeValue(60000))
+                .execute()
+                .actionGet();
+            //Break condition: No hits are returned
+            if (response.getHits().getHits().length == 0) {
+                break;
+            }
+        }
 
         SearchResponse sr = node.client().prepareSearch(indexName)
             .setTypes(typeName)
