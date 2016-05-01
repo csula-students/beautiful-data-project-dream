@@ -192,7 +192,7 @@ The schedule below is tentative and is subject to change.
 | 8 [5/22]      | [Data Analysis][4] | Intro to Machine learning **Homework 3** |
 | 9 [5/29]      | [Data Visualization][5] | JavaScript and D3 **Quiz 4** |
 | 10 [6/5]      | [Data Visualization][5] | More visualization **Homework 4** |
-| Final [6/14]     | Launch date | Ready for demo! |
+| Final [6/12]     | Launch date | Ready for demo! |
 
 [1]: notes/introduction.md
 [2]: notes/data_acquisition.md
