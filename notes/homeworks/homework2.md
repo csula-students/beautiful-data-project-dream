@@ -6,6 +6,23 @@
 
 <b style="color: #F44336; font-size: 17px;">April 24th midnight</b>
 
+## Updated requirements after 4/17
+
+Make sure you data satisfies at least 2Vs out of 3Vs of Big Data below:
+
+* Volume
+
+> At least **500MB** worth of total data size at this stage  
+> If you successfully meet the requirements we have earlier as **3GB**, you get bonus *2 points* in this homework
+
+* Velocity
+
+> Real time data. Usually you can only accomplish this requirement through API client like Twitter streaming API.
+
+* Variety
+
+> At least have **3 data source** to provide data to you (e.g. Twitter, Facebook, CNN News ... etc. -- each of them counts toward one data source)
+
 ## Description
 
 In this homework, your job is to acquire data by implementing our data collector interface with your own detail. This may involves you to download data using Http request library, to do web scraping or to make some API calls.
@@ -21,6 +38,9 @@ This homework will involve you to program your own acquiring process, which is i
 * What question(s) did you decide to work on as a team?
 * What is your data source(s)?
 * How long does it take for you to download data? Have you download complete data set?
+
+> Please provide a screenshot on your total data size
+
 * How large is your data (size wise and number of records wise)?
 * Do you face any dirty data issue? If you do, how did you clean up your data?
 * How do you store the data you downloaded?
@@ -83,12 +103,12 @@ But how do instructors measure your testing? I will set up the test coverage on 
 
 * Github pull request [1 pt]
 * Answer questions in description [2 pts]
-* Implement data collector [5 pts]
-  * Implements **Collector** interface to download data
-  * Implements **Source** interface to provide data
-  * Save data into a file
+* Satisfy at least 2Vs out of 3Vs [2 pts]
+* Implement data collector [3 pts]
+  * Implements **Collector** interface to mungee data and save data
+  * Implements **Source** interface to download/parse data to memory
+  * Save data into a file/data storage
 > You should be able to run this data collector yourself to download data.  
-> This is where your main logic lives  
 
 * Testing your own data collector [2 pts]
 > Have at least 30% code coverage
