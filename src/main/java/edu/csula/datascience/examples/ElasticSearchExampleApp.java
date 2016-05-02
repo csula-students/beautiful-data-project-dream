@@ -34,6 +34,8 @@ import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
  * data to elastic search instance running locally
  *
  * After that we will be using elastic search to do full text search
+ *
+ * gradle command to run this app `gradle esExample`
  */
 public class ElasticSearchExampleApp {
     private final static String indexName = "bd-data";
@@ -41,8 +43,15 @@ public class ElasticSearchExampleApp {
 
     public static void main(String[] args) throws URISyntaxException, IOException {
         Node node = nodeBuilder().settings(Settings.builder()
+            .put("cluster.name", "realEric")
             .put("path.home", "elasticsearch-data")).node();
         Client client = node.client();
+
+        /**
+         *
+         *
+         * INSERT data to elastic search
+         */
 
         // as usual process to connect to data source, we will need to set up
         // node and client// to read CSV file from the resource folder
@@ -117,33 +126,40 @@ public class ElasticSearchExampleApp {
             e.printStackTrace();
         }
 
+        /**
+         * Structured search
+         */
+
         // simple search by field name "state" and find Washington
-        SearchResponse response = client.prepareSearch(indexName)
-            .setTypes(typeName)
-            .setSearchType(SearchType.DEFAULT)
-            .setQuery(QueryBuilders.matchQuery("state", "Washington"))   // Query
-            .setScroll(new TimeValue(60000))
-            .setSize(60).setExplain(true)
-            .execute()
-            .actionGet();
-
-        //Scroll until no hits are returned
-        while (true) {
-
-            for (SearchHit hit : response.getHits().getHits()) {
-                System.out.println(hit.sourceAsString());
-            }
-            response = client
-                .prepareSearchScroll(response.getScrollId())
-                .setScroll(new TimeValue(60000))
-                .execute()
-                .actionGet();
-            //Break condition: No hits are returned
-            if (response.getHits().getHits().length == 0) {
-                break;
-            }
-        }
-
+//        SearchResponse response = client.prepareSearch(indexName)
+//            .setTypes(typeName)
+//            .setSearchType(SearchType.DEFAULT)
+//            .setQuery(QueryBuilders.matchQuery("state", "Washington"))   // Query
+//            .setScroll(new TimeValue(60000))
+//            .setSize(60).setExplain(true)
+//            .execute()
+//            .actionGet();
+//
+//        //Scroll until no hits are returned
+//        while (true) {
+//
+//            for (SearchHit hit : response.getHits().getHits()) {
+//                System.out.println(hit.sourceAsString());
+//            }
+//            response = client
+//                .prepareSearchScroll(response.getScrollId())
+//                .setScroll(new TimeValue(60000))
+//                .execute()
+//                .actionGet();
+//            //Break condition: No hits are returned
+//            if (response.getHits().getHits().length == 0) {
+//                break;
+//            }
+//        }
+//
+        /**
+         * AGGREGATION
+         */
         SearchResponse sr = node.client().prepareSearch(indexName)
             .setTypes(typeName)
             .setQuery(QueryBuilders.matchAllQuery())

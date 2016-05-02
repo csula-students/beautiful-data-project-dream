@@ -332,6 +332,8 @@ Elasticsearch executes the preceding match query as follows:
 
 ### Aggregation
 
+Quick aggregation types: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
+
 To master aggregations, you need to understand only two main concepts:
 
 * Buckets
@@ -578,3 +580,31 @@ Due to the time constraint, we will skip this part of notes.
 ## Kibana in action
 
 Demo
+
+To get Kibana working as what we demo today. Please follow the following guidelines:
+
+> Before we started, make sure you have your own unique `cluster.name` set up if you are running elastic search in class with all of us.
+
+1. Start elastic search
+2. Start Kibana
+3. Run `gradle esExample` to insert data into elastic search
+4. Open Kibana
+    ![Kibana setting](imgs/kibana_settings.png)
+5. Upon above, you want to start by by changing the timestamp
+    ![Kibana time settings](imgs/kibana_time_settings.png)
+
+And with above settings, you will be able to start using Discover mode to start searching your data.
+
+For instance, you can type in `state: "Washington"` to search for Washington data. Or you can do `averageTemperature: [10 TO 20]` to do range search. To read more, follow here: https://www.elastic.co/guide/en/kibana/current/discover.html
+
+From Discovery mode, you can start to do some initial search to see how data flows through time.
+
+But if you want to start your initial EDA, I suggest you to take a look at the visualization tab.
+
+Make sure you start creating your own visualization to look at your data from different angle and ask yourself hard question.
+
+To create visualization, you will need to think in aggregation. If you are not sure how to create visualization or which graph to use, I suggest you to review through the aggregations above.
+
+For example, you can start by creating a pie chart with aggregation of terms like below:
+
+![Kibana bar chart](imgs/kibana_bar_chart.png)
