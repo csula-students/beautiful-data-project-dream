@@ -7,8 +7,11 @@ import java.util.Collection;
  *
  * It should be able to download data from source and save data.
  */
-public interface Collector<T, N> {
-    Collection<T> download(Source<N> src);
+public interface Collector<T, R> {
+    /**
+     * Mungee method is to clean data. e.g. remove data rows with errors
+     */
+    Collection<T> mungee(Collection<R> src);
 
-    boolean save(Collection<T> data);
+    void save(Collection<T> data);
 }
