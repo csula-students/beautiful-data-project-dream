@@ -34,6 +34,8 @@ import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
  * data to elastic search instance running locally
  *
  * After that we will be using elastic search to do full text search
+ *
+ * gradle command to run this app `gradle esExample`
  */
 public class ElasticSearchExampleApp {
     private final static String indexName = "bd-data";
@@ -41,87 +43,96 @@ public class ElasticSearchExampleApp {
 
     public static void main(String[] args) throws URISyntaxException, IOException {
         Node node = nodeBuilder().settings(Settings.builder()
+            .put("cluster.name", "realEric")
             .put("path.home", "elasticsearch-data")).node();
         Client client = node.client();
 
-//        // as usual process to connect to data source, we will need to set up
-//        // node and client// to read CSV file from the resource folder
-//        File csv = new File(
-//            ClassLoader.getSystemResource("GlobalLandTemperaturesByState.csv")
-//                .toURI()
-//        );
-//
-//        // create bulk processor
-//        BulkProcessor bulkProcessor = BulkProcessor.builder(
-//            client,
-//            new BulkProcessor.Listener() {
-//                @Override
-//                public void beforeBulk(long executionId,
-//                                       BulkRequest request) {
-//                }
-//
-//                @Override
-//                public void afterBulk(long executionId,
-//                                      BulkRequest request,
-//                                      BulkResponse response) {
-//                }
-//
-//                @Override
-//                public void afterBulk(long executionId,
-//                                      BulkRequest request,
-//                                      Throwable failure) {
-//                    System.out.println("Facing error while importing data to elastic search");
-//                    failure.printStackTrace();
-//                }
-//            })
-//            .setBulkActions(10000)
-//            .setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
-//            .setFlushInterval(TimeValue.timeValueSeconds(5))
-//            .setConcurrentRequests(1)
-//            .setBackoffPolicy(
-//                BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3))
-//            .build();
-//
-//        // Gson library for sending json to elastic search
-//        Gson gson = new Gson();
-//
-//        try {
-//            // after reading the csv file, we will use CSVParser to parse through
-//            // the csv files
-//            CSVParser parser = CSVParser.parse(
-//                csv,
-//                Charset.defaultCharset(),
-//                CSVFormat.EXCEL.withHeader()
-//            );
-//
-//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-//
-//            // for each record, we will insert data into Elastic Search
-//            parser.forEach(record -> {
-//                // cleaning up dirty data which doesn't have time or temperature
-//                if (
-//                    !record.get("dt").isEmpty() &&
-//                    !record.get("AverageTemperature").isEmpty()
-//                ) {
-//                    Temperature temp = new Temperature(
-//                        record.get("dt"),
-//                        Double.valueOf(record.get("AverageTemperature")),
-//                        record.get("State"),
-//                        record.get("Country")
-//                    );
-//
-//                    bulkProcessor.add(new IndexRequest(indexName, typeName)
-//                        .source(gson.toJson(temp))
-//                    );
-//                }
-//            });
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        /**
+         *
+         *
+         * INSERT data to elastic search
+         */
+
+        // as usual process to connect to data source, we will need to set up
+        // node and client// to read CSV file from the resource folder
+        File csv = new File(
+            ClassLoader.getSystemResource("GlobalLandTemperaturesByState.csv")
+                .toURI()
+        );
+
+        // create bulk processor
+        BulkProcessor bulkProcessor = BulkProcessor.builder(
+            client,
+            new BulkProcessor.Listener() {
+                @Override
+                public void beforeBulk(long executionId,
+                                       BulkRequest request) {
+                }
+
+                @Override
+                public void afterBulk(long executionId,
+                                      BulkRequest request,
+                                      BulkResponse response) {
+                }
+
+                @Override
+                public void afterBulk(long executionId,
+                                      BulkRequest request,
+                                      Throwable failure) {
+                    System.out.println("Facing error while importing data to elastic search");
+                    failure.printStackTrace();
+                }
+            })
+            .setBulkActions(10000)
+            .setBulkSize(new ByteSizeValue(1, ByteSizeUnit.GB))
+            .setFlushInterval(TimeValue.timeValueSeconds(5))
+            .setConcurrentRequests(1)
+            .setBackoffPolicy(
+                BackoffPolicy.exponentialBackoff(TimeValue.timeValueMillis(100), 3))
+            .build();
+
+        // Gson library for sending json to elastic search
+        Gson gson = new Gson();
+
+        try {
+            // after reading the csv file, we will use CSVParser to parse through
+            // the csv files
+            CSVParser parser = CSVParser.parse(
+                csv,
+                Charset.defaultCharset(),
+                CSVFormat.EXCEL.withHeader()
+            );
+
+            // for each record, we will insert data into Elastic Search
+            parser.forEach(record -> {
+                // cleaning up dirty data which doesn't have time or temperature
+                if (
+                    !record.get("dt").isEmpty() &&
+                    !record.get("AverageTemperature").isEmpty()
+                ) {
+                    Temperature temp = new Temperature(
+                        record.get("dt"),
+                        Double.valueOf(record.get("AverageTemperature")),
+                        record.get("State"),
+                        record.get("Country")
+                    );
+
+                    bulkProcessor.add(new IndexRequest(indexName, typeName)
+                        .source(gson.toJson(temp))
+                    );
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /**
+         * Structured search
+         */
 
         // simple search by field name "state" and find Washington
-//        SearchResponse response = client.prepareSearch("bd-example")
-//            .setTypes("temperatures")
+//        SearchResponse response = client.prepareSearch(indexName)
+//            .setTypes(typeName)
 //            .setSearchType(SearchType.DEFAULT)
 //            .setQuery(QueryBuilders.matchQuery("state", "Washington"))   // Query
 //            .setScroll(new TimeValue(60000))
@@ -145,7 +156,10 @@ public class ElasticSearchExampleApp {
 //                break;
 //            }
 //        }
-
+//
+        /**
+         * AGGREGATION
+         */
         SearchResponse sr = node.client().prepareSearch(indexName)
             .setTypes(typeName)
             .setQuery(QueryBuilders.matchAllQuery())

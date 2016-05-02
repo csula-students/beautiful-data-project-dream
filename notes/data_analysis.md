@@ -6,7 +6,7 @@ Now we have a large amount of data. How do we make sense out of this set of data
 
 * 5/1
   * Elastic Search Query/Aggregation
-* 5/8
+* 5/8 -- No class
   * MongoDB Aggregation
     * Sum, count, avg ...
     * Map Reduce
@@ -18,15 +18,15 @@ Now we have a large amount of data. How do we make sense out of this set of data
 
 ## Metrics
 
-* Elastic Search query
-* MongoDB Aggregation test
+* Elastic Search query/aggregation
+* Kibana visualization
+* MongoDB aggregation
 * Map reduce concept
-* Common Machine Learning methods
-
+* Machine learning algorithms
 
 ## Docker Architecture
 
-Due to some confusions from students, I want to clarify docker a bit on architecture stand point.
+Due to some questions from students that still don't quite get what Docker is, I want to clarify docker a bit on architecture stand point.
 
 ![docker architecture graph](imgs/docker_architecture.png)  
 Credit: https://docs.docker.com/engine/understanding-docker/
@@ -35,33 +35,43 @@ Credit: https://docs.docker.com/engine/understanding-docker/
 
 So far, we have been doing some initial data analysis(IDA) with our data munging process. We tested some of our assumptions on the data shape and clean up accordingly.
 
-Many of you asked me if you data munge process is right. In example, is it right to just clean up the error values?
+Many of you asked me if you data munge process is right. In example, is it right to just clean up the null values? What else should we clean up?
 
-My answer is always depends on your question(s) and what you are trying to accomplish.
+My answer is always "it depends on your question(s) and what you are trying to accomplish".
 
-For instance, some of you are saying you don't need timestamp data because it doesn't fit into your question. So you munge timestamp data out.
+For instance, some of you are saying you don't need timestamp data because it doesn't fit into your question. So you remove timestamp data out.
 
-This may not be the proper solution to just munge out data because you think you are may not be using it without going through the process of EDA.
+This may not be the right move to do just because you think you are may not be using it without going through the process of EDA.
 
 So what is this EDA?
 
-https://en.wikipedia.org/wiki/Exploratory_data_analysis
+![Data Science graph](https://upload.wikimedia.org/wikipedia/commons/b/ba/Data_visualization_process_v1.png)  
+credit: https://en.wikipedia.org/wiki/Exploratory_data_analysis
 
 > [EDA] focuses more narrowly on checking assumptions required for model fitting and hypothesis testing, and handling missing values and making transformations of variables as needed. EDA encompasses IDA.
 
-Examination among data and relationship among variables. EDA is usually the first part of the big analysis process to build the predict model. It is an opportunity to check your assumption about data and your intuition about data set.
+EDA is an examination among data and relationship among variables. EDA is usually the first part of the big analysis process to build the predict model. It is an opportunity to check your assumption about data and to build your intuition about data set.
 
-Many times, business decisions are made by the visualization result from EDA. Other times, you may polish this visualization before you present your finding of data to public.
+Many times, business decisions are made by the visualization result from EDA. Other times, you may polish the visualization before you present your finding of data to public.
 
 EDA is about an approach of understanding data using visualization or some statistic model (like what we did in week 1 ... mean, min, max ... etc.).
 
-In this course, we will continue with Elastic Search to perform aggregations and use Kibana to do some initial visualization.
+The objectives of EDA are to:
 
-Later on, we will be using MongoDB to learn map reduce concept (again to perform aggregations).
+* Suggest hypotheses about the causes of observed phenomena
+* Assess assumptions on which statistical inference will be based
+* Support the selection of appropriate statistical tools and techniques
+* Provide a basis for further data collection through surveys or experiments
 
-Further, we will also spend two weeks learning Python and how to use Python to do detail analysis or machine learning for better predict model.
+In this course, we will continue with Elastic Search to perform aggregations and use Kibana to do some initial visualization without too much programming behind the scene.
 
-John, by next week, will talk more in depth about EDA in video. Stay tuned!
+Later on, we will be using MongoDB to learn map reduce concept (again to perform aggregations in scalable way).
+
+Map reduce concept is quite important in a sense that Hadoop is all about map reduce. Even though MongoDB map reduce is different from Hadoop, I think it's a great starting point to see what map reduce can do.
+
+Further, we will also spend about two weeks learning Python and how to use Python to do more analysis or machine learning for better predict model.
+
+John, by next week (May 8th), will talk more in depth about EDA in his video. Stay tuned!
 
 ## Elastic Search Query In Depth
 
@@ -322,6 +332,8 @@ Elasticsearch executes the preceding match query as follows:
 
 ### Aggregation
 
+Quick aggregation types: https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html
+
 To master aggregations, you need to understand only two main concepts:
 
 * Buckets
@@ -568,3 +580,31 @@ Due to the time constraint, we will skip this part of notes.
 ## Kibana in action
 
 Demo
+
+To get Kibana working as what we demo today. Please follow the following guidelines:
+
+> Before we started, make sure you have your own unique `cluster.name` set up if you are running elastic search in class with all of us.
+
+1. Start elastic search
+2. Start Kibana
+3. Run `gradle esExample` to insert data into elastic search
+4. Open Kibana
+    ![Kibana setting](imgs/kibana_settings.png)
+5. Upon above, you want to start by by changing the timestamp
+    ![Kibana time settings](imgs/kibana_time_settings.png)
+
+And with above settings, you will be able to start using Discover mode to start searching your data.
+
+For instance, you can type in `state: "Washington"` to search for Washington data. Or you can do `averageTemperature: [10 TO 20]` to do range search. To read more, follow here: https://www.elastic.co/guide/en/kibana/current/discover.html
+
+From Discovery mode, you can start to do some initial search to see how data flows through time.
+
+But if you want to start your initial EDA, I suggest you to take a look at the visualization tab.
+
+Make sure you start creating your own visualization to look at your data from different angle and ask yourself hard question.
+
+To create visualization, you will need to think in aggregation. If you are not sure how to create visualization or which graph to use, I suggest you to review through the aggregations above.
+
+For example, you can start by creating a pie chart with aggregation of terms like below:
+
+![Kibana bar chart](imgs/kibana_bar_chart.png)
