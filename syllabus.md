@@ -189,8 +189,8 @@ The schedule below is tentative and is subject to change.
 | 5 [5/1]       | [Data Analysis][4] | Elastic Search Query **Quiz 2** |
 | 6 [5/8]       | [Data Analysis][4] | MongoDB MapReduce **No class but remote video and notes** |
 | 7 [5/15]      | [Data Analysis][4] | Install Python **Quiz 3** |
-| 8 [5/22]      | [Data Analysis][4] | Intro to Machine learning **Homework 3** |
-| 9 [5/29]      | [Data Visualization][5] | JavaScript and D3 **Quiz 4** |
+| 8 [5/22]      | [Data Analysis][4] | Intro to Machine learning |
+| 9 [5/29]      | [Data Visualization][5] | JavaScript and D3 **Quiz 4** **Homework 3** |
 | 10 [6/5]      | [Data Visualization][5] | More visualization **Homework 4** |
 | Final [6/12]     | Launch date | Ready for demo! |
 
