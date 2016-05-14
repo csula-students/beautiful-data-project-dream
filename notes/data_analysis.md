@@ -969,7 +969,7 @@ while source.hasNext():
 ### File read/write
 
 ```python
-f = open('file_name.extension', 'rw') # second argument is for mode read or write or both!
+f = open('file_name.extension', 'r') # second argument is for mode read or write or both!
 
 f.read() # reads out the entire content
 f.readline() # reads line by line
@@ -1020,3 +1020,22 @@ class MyClass: # can defined inheritance MyClass(ParentClass, ParentClass2)
     def f(self): # first argument is always self
         return 'hello world'
 ```
+
+### CSV
+
+```python
+import csv
+
+with open('example.csv', 'rb') as csvfile:
+  spamreader = csv.reader(csvfile)
+  for row in spamreader:
+    print ', '.join(row)
+```
+
+### Package manager -- pip
+
+https://pip.pypa.io/en/stable/installing/
+
+### Awesome python
+
+https://github.com/vinta/awesome-python
