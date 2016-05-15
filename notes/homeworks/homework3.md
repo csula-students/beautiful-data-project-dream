@@ -6,22 +6,22 @@ May 29th Midnight.
 
 ## Description
 
-Exploratory data anylysis.
-
-In this homework, your job is to create your initial presentation on your EDA. The deliverable for this homework is to create a presentation and submit your link on CSNS.
-
-So what is EDA? Recall from the data_analysis.md earlier:
+Exploratory Data Analysis (EDA).  So what is EDA? Recall from the [data_analysis.md](../data_analysis.md) earlier:
 
 > The objectives of EDA are to:
 > 
 > * Suggest hypotheses about the causes of observed phenomena
 > * Assess assumptions on which statistical inference will be based
 > * Support the selection of appropriate statistical tools and techniques
-> * Provide a basis for further data collection through surveys or experiments`
+> * Provide a basis for further data collection through surveys or experiments
 
-Your job is to create a presentation containing graph about your data and answer each of the point above.
+Your job is to create a presentation containing graph about your data.  Your presentation should answer each of the above.
 
 ## Tasks
+
+In this homework, your job is to create your initial presentation on your EDA. The deliverable for this homework is to create a presentation and submit your link on CSNS.
+
+In order to your presentation, your team will need to:
 
 1. Aggregate data
 2. Generate graph
@@ -51,11 +51,44 @@ Using Elastic Search implies your tasks would be like below:
 
   > Make sure you have those visualization saved from 4th step
 
+### Presentation Guideline
+
+In order to preserve valuable classtime, your team will need to create an online screencast using youtube, vimeo, or any other video distribution service.  Your video must be visible by a non-registered user.  However, it does not have to be listed in a public directory.  
+
+Here is the guideline for the presentation:
+
+- The screencast video must not require special pluggins (we recommend uploading to youtube)
+- You **cannot** email or attach a video file, e.g. `.mov`, `.avi`, `.mpeg` etc.
+- Your presentation must be between 1:40 and 2:00.  Videos with duration > 2:00 or < 1:40 will not be accepted
+- Your presentation must be visually clear and have good audio; we recommend that you record at HD level
+
+Please note that the above requirements are **not** negotiable.
+
+Some recommendations:
+- Avoid verbal pauses (ah and umm's should be avoid) -- when in doubt, practice.  You should script out what you are going to say ahead of time.  The whole idea of "winging it" is not recommended
+- Avoid reading code or talking too low-level details
+- Recommended the following slides:
+  - Title slide (presentation title and team members) -- introduce yourself and your team
+  - Agenda slide, `here is our agenda...`
+  - Background slide
+    - State your hypotheses
+    - State your assumptions
+  - Approach and methods
+    - Talk about your data
+    - Tools you use
+  - Findings, give a one or two sentence punchline
+ 
+It is estimate that, if this the first time you do an online presentation, you'd need to spend at least 1 hour to do the presentation justice.  You will find yourslef recording about 4 to 5 times before getting it perfect.  You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do.
+
 ## Deliverables
 
-* CSNS submission containing link your presentation slides and link to youtube video you guys present
+* CSNS submission containing the following:
+  - list of team members
+  - presentation title
+  - link your presentation slides
+  - link to the video screencast of your presentation
 * Answer each statement above
-* Pull request containing all the coding changes you have
+* Pull request containing all the coding changes you have made
 
 ## Grading rubric
 
