@@ -68,10 +68,10 @@ Some recommendations:
 - Avoid verbal pauses (ah and umm's should be avoided) -- when in doubt, practice.  You should script out what you are going to say ahead of time
 - The whole idea of "winging it" is not recommended
 - Avoid reading code or talking too low-level details
-- Recommended the following slides or presentation structure:
+- We recommend the following presentation structure:
   - Title slide (presentation title and team members) -- introduce yourself and your team
   - Agenda slide, `here is our agenda...`
-  - Background slide
+  - Background slide(s)
     - State your hypotheses
     - State your assumptions
   - Approach and methods
@@ -80,11 +80,10 @@ Some recommendations:
   - Findings, give a one or two sentence punchline
 - If you have live or animated data, recommend that you use keyboard shortcut to switch between slides and demo.
  
-It is estimated that, if this the first time doing an online presentation, you'd need to spend at least 1 hour to do the presentation justice.  Afterall, anything less than perfect is not worth doing.
-
-You will find yourself recording about 4 to 5 times before getting it perfect.  Afterall, anything less than perfect is not worth doing.  
-
-You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do. Afterall, anything less than perfect is not worth doing.
+Some thoughts:
+- It is estimated that, if this the first time doing an online presentation, you'd need to spend at least 1 hour to do the presentation justice.  Afterall, anything less than perfect is not worth doing.
+- You will find yourself recording about 4 to 5 times before getting it perfect.  Afterall, anything less than perfect is not worth doing.  
+- You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do. Afterall, anything less than perfect is not worth doing.
 
 ## Deliverables
 
