@@ -611,16 +611,17 @@ For example, you can start by creating a pie chart with aggregation of terms lik
 
 ## Python
 
-Please install [Python 2](https://www.python.org/).
+Please install [Python 2](https://www.python.org/). Please just download 2.7 for this class not version 3.
 
-> For Mac user, use `brew install python`
+> For Mac user, use `brew install python`  
 
 Python, one of the top two common languages choice for data science. Why?
 
-Many libraries are written in python. This includes machine learning libraries like [Sci-kit](http://scikit-learn.org/stable/)
+Many libraries are written in python. This includes machine learning libraries like [Sci-kit](http://scikit-learn.org/stable/), [NumPy](http://www.numpy.org/) or [Pandas](http://pandas.pydata.org/pandas-docs/stable/10min.html)
 
 So why is Python popular?
 
+* Easy to learn
 * Easy to get it up and running
 * Syntax is very close to pseudocode
 * Interpreted languages (have interpreter built in)
@@ -629,7 +630,7 @@ In the following session, we will introduce python from the ground up.
 
 ### Syntax
 
-Not like Java, python doesn't have bracket. Python uses indentation to detect code block.
+Not like Java, python doesn't have bracket. Python uses **indentation** to detect code block.
 
 What do I mean by indentation? Consider the following:
 
@@ -1036,6 +1037,11 @@ with open('example.csv', 'rb') as csvfile:
 
 https://pip.pypa.io/en/stable/installing/
 
-### Awesome python
+### Resources
 
-https://github.com/vinta/awesome-python
+* https://github.com/vinta/awesome-python
+* https://developers.google.com/edu/python/
+* [Numpy Tutorial](http://scipy.github.io/old-wiki/pages/Tentative_NumPy_Tutorial.html)
+* [Scipy tutorial](http://docs.scipy.org/doc/scipy/reference/tutorial/)
+* [Pandas in 10 minutes](http://pandas.pydata.org/pandas-docs/stable/10min.html)
+* 
