@@ -53,7 +53,7 @@ Using Elastic Search implies your tasks would be like below:
 
 ### Presentation Guideline
 
-In order to preserve valuable classtime, your team will need to create an online screencast using youtube, vimeo, or any other video distribution service.  Your video must be visible by a non-registered user.  However, it does not have to be listed in a public directory.  
+In order to preserve valuable lecture time, your team will need to create an online screencast using youtube, vimeo, or any other video distribution services.  Your video must be visible by a non-registered user.  However, it does not have to be listed in a public directory.  
 
 Here is the guideline for the presentation:
 
@@ -65,9 +65,10 @@ Here is the guideline for the presentation:
 Please note that the above requirements are **not** negotiable.
 
 Some recommendations:
-- Avoid verbal pauses (ah and umm's should be avoid) -- when in doubt, practice.  You should script out what you are going to say ahead of time.  The whole idea of "winging it" is not recommended
+- Avoid verbal pauses (ah and umm's should be avoided) -- when in doubt, practice.  You should script out what you are going to say ahead of time
+- The whole idea of "winging it" is not recommended
 - Avoid reading code or talking too low-level details
-- Recommended the following slides:
+- Recommended the following slides or presentation structure:
   - Title slide (presentation title and team members) -- introduce yourself and your team
   - Agenda slide, `here is our agenda...`
   - Background slide
@@ -77,8 +78,13 @@ Some recommendations:
     - Talk about your data
     - Tools you use
   - Findings, give a one or two sentence punchline
+- If you have live or animated data, recommend that you use keyboard shortcut to switch between slides and demo.
  
-It is estimate that, if this the first time you do an online presentation, you'd need to spend at least 1 hour to do the presentation justice.  You will find yourslef recording about 4 to 5 times before getting it perfect.  You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do.
+It is estimated that, if this the first time doing an online presentation, you'd need to spend at least 1 hour to do the presentation justice.  Afterall, anything less than perfect is not worth doing.
+
+You will find yourself recording about 4 to 5 times before getting it perfect.  Afterall, anything less than perfect is not worth doing.  
+
+You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do. Afterall, anything less than perfect is not worth doing.
 
 ## Deliverables
 
