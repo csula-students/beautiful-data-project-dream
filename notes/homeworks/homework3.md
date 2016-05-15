@@ -21,7 +21,7 @@ Your job is to create a presentation containing graph about your data.  Your pre
 
 In this homework, your job is to create your initial presentation on your EDA. The deliverable for this homework is to create a presentation and submit your link on CSNS.
 
-In order to your presentation, your team will need to:
+In order to do your presentation, your team will need to:
 
 1. Aggregate data
 2. Generate graph
@@ -81,9 +81,9 @@ Some recommendations:
 - If you have live or animated data, recommend that you use keyboard shortcut to switch between slides and demo.
  
 Some thoughts:
-- It is estimated that, if this the first time doing an online presentation, you'd need to spend at least 1 hour to do the presentation justice.  Afterall, anything less than perfect is not worth doing.
-- You will find yourself recording about 4 to 5 times before getting it perfect.  Afterall, anything less than perfect is not worth doing.  
-- You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do. Afterall, anything less than perfect is not worth doing.
+- It is estimated that, if this the first time doing an online presentation, you'd need to spend at least 1 hour to do the presentation justice.
+- You will find yourself recording about 4 to 5 times before getting it perfect.
+- You should definitely watch your own video from start to finish.  Anything that does not sound right or not clear, you should re-do. 
 
 ## Deliverables
 
