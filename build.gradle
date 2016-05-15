@@ -64,6 +64,12 @@ task esExample(type: JavaExec) {
   main = 'edu.csula.datascience.examples.ElasticSearchExampleApp'
 }
 
+task esQuiz(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'edu.csula.datascience.examples.QuizESApp'
+}
+
 task wrapper(type: Wrapper) {
   gradleVersion = '2.0'
 }
