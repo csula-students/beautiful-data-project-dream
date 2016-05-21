@@ -51,6 +51,9 @@ Using Elastic Search implies your tasks would be like below:
 
   > Make sure you have those visualization saved from 4th step
 
+
+**You cannot use technology other than Kibana and Elastic Search for your programming part.  This policy is to ensure that grading is consistent across the teams.  Deviation from this requirement will not be accepted.**
+
 ### Presentation Guideline
 
 In order to preserve valuable lecture time, your team will need to create an online screencast using youtube, vimeo, or any other video distribution services.  Your video must be visible by a non-registered user.  However, it does not have to be listed in a public directory.  
