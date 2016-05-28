@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>D3 Example</title>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <style>
+    svg {
+      border: 1px solid #2196F3;
+    }
+  </style>
+</head>
+<body>
+  <main class="example">
+    <h1>Example showing how to create graph using D3 and SVG</h1>
+  </main>
+  
+  <script type="text/javascript">
+    var svg = d3.select('main.example')
+      .append('svg');
+    // y axis scale
+    var y = d3.scale.linear().domain([1900, 2016]).range([250, 0]);
+    var x = d3.scale.linear().domain([-43, 46]).range([150, 0]);
+    console.log(x(23), y(1989));
+    svg.append('circle')
+      .attr('r', 3)
+      .attr('fill', 'red')
+      .attr('cx', x(23))
+      .attr('cy', y(1989)); 
+  </script>
+</body>
+</html>
