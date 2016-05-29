@@ -4,40 +4,49 @@ We've got some conclusions out of the data. How do we report this data to others
 
 ## Architecture of the project
 
-In this part of lecture, we are at the end of this class.
+At this point, we are at the end of this lecture.
 
-Lets spend some time to talk about what we have accomplished so far:
+Lets spend some time to talk about out accomplishments so far:
 
-We have built a project architected like below:
+We have built a data science project that is architected below:
 
 ![Project architecture](imgs/project_architecture.png)
 
-1. We've built the *Source* to read the data from internet or downloaded file.
-2. We've built the *Collector* to munge and clean out the data
-3. Also in *Collector* we send the data to our data storage (primary to ElasticSearch)
-4. Using ElasticSearch, we do our EDA (Exploratory Data Analysis)
-5. With Kibana, we are able to provide our initial findings
-6. Last step is to refine and polish our report in more of formal report
+1. We've built the *Source* to acquire and parse the data from internet or downloaded file
+2. We've built the *Collector* to munge and clean the data
+3. Also in *Collector* we send the data to our storage (primary to ElasticSearch)
+4. Using ElasticSearch & Kibana, we do our EDA (Exploratory Data Analysis)
+5. Using formal web graphing libraries to refine and polish our report in more of formal report
 
-Just want to clarify, you can replace parts in this architecture with various different techniques. In this class, we picked ElasticSearch because it is the tool I think fits the best in our timeline.
+From here, we will learn to utilize some graphing libraries like D3 to refined our visualization earlier.
 
-In other word, for your future purpose. Please review the data science procedure and use that as a base instead of strictly following the architecture of this project.
+A quick disclaimer: this architecture is not the only architecture to do the data science project. In fact, there are many ways to do the data science project.
+
+Moreover, you can replace any part in this architecture with a different technique.
+
+In this class, we picked ElasticSearch as the central because it is the tool I think fits the best in our timeline.
+
+In other word, for your future purpose. Please review the data science procedure and use that as a base instead of strictly following the architecture of this class project.
+
+Be creative on the tools you choose and pick the right tool for the right need!
 
 ## What is visualization?
 
 > A picture worths a thousand words.
 
-Turning numbers (data) into pictures and into stories.
+Visualization is turning numbers (data) into pictures and into stories.
 
-So how to define a good visualization vs bad ones?
+But how to define a good visualization vs bad ones?
 
-Exploratory vs explanatory.
+Data visualization can be briefly list as exploratory vs explanatory.
 
 ### Exploratory
 
-In earlier lecture, we learned how to do exploratory data analysis with Kibana by making a bunch of graphs. This, so to speak, exploratory visualization. You are playing with different types of graphs in order to figure the best visualization to represent your data.
+In earlier lecture, we learned how to do exploratory data analysis with Kibana by making a bunch of graphs.
 
-It's about to connect the dots in interesting ways and to look at the data in different angles in a un-bias and un-misleading way.
+This, so to speak, exploratory visualization. You are playing with different types of graphs in order to figure the best visualization to represent your data.
+
+Using metaphor to explain -- you are finding a perfect rounded rock among a thousand rocks.
 
 ### Explanatory
 
@@ -50,6 +59,8 @@ A good explanatory visualization should cover the following five qualities:
 5. Story
 
 In short, your explanatory visualization should tell a story in a straight forward way.
+
+Continued from the metaphor above, you are about to present this perfect rounded rock to your audiences.
 
 Lets give an example -- think about the visualization like notes of lecture. Exploratory is like your notes to yourself while the explanatory is like notes from you to your audience (like my notes to all of students).
 
@@ -65,17 +76,23 @@ Data visualization is not just science, it is combining both art and science.
 
 A good visualization will contain design elements inside like color, size and story telling elements.
 
-In other word, you will need to have the ability to code, design and ability to communicate.
+In other word, you will need to have the ability to code, design as well as the ability to communicate.
 
-I know as Computer Scientist, we really don't have a background of design nor the story telling abilities. However, I'd love all of you to think about these two elements as part of your visualization.
+I know that us as Computer Scientist; we really don't have a background of design nor the story telling. However, I'd love all of you to try your best for these two elements as part of your visualization.
 
-Give it a try to create your best visualization and see what kind of challenges you are facing. In future, you may be working with others (which may cover your weakness) to create a fined graph!
+Give it a try to create your best visualization and see what kind of challenges you are facing. 
+
+In future, you may be working with others (which may cover your weakness) to create a fined graph!
 
 In short, don't just treat data science as only software engineering. It is much larger than just coding!
 
+We will try out best to covert both the coding and the design part of the visualization here.
+
 ## Example of good data visualization
 
-Above talks about a few principles of good visualization. But can you give me example on how a good visualization is?
+Above talks about a few principles of good visualization. 
+
+Can you give me example on a good visualization?
 
 I think video by Hans Rosling best represents all three parts of good visualization (design, coding and story telling).
 
@@ -83,13 +100,15 @@ https://www.youtube.com/watch?v=jbkSRLYSojo
 
 ## Data Types
 
-At this moment, we have a lot of data. And we can category these data into a few data types.
+At this phase of project, we have a lot of data; and we category these data into a few different data types.
 
-This categories of data types not only helps us to model better our data but also helpful toward the visualization aspect.
+These categories of data types not only helps us to model better but also helpful toward the visualization aspect.
 
-Think about the Kibana graph, you have to tell ElasticSearch ahead of time on what *mapping* (data type) some column is even before you send the data into ElasticSearch. E.g. you will have to tell ElasticSearch this data is for geopoint rather than just two numbers (lat and long) in order to map these points on map!
+Think about the Kibana graph, you have to tell ElasticSearch ahead of time on what *mapping* (data type) a column is even before you send the data into ElasticSearch. 
 
-For visualization, lets consider the following categories for simplification:
+An example of this is you will have to tell ElasticSearch this data is for geopoint rather than just two numbers (lat and long) in order to map these points on map!
+
+For visualization, lets consider the following few categories of data types for simplification:
 
 1. Numerical data
   * Numbers
@@ -142,30 +161,30 @@ Libraries urls:
 
 ## Intro to JavaScript
 
-Before we talk about D3, we need to understand the most important API method in the JavaScript.
+Before we talk about D3, it would be very helpful if we know how JavaScript works.
 
-While there are a lot of other aspects of JavaScript that is worth mentioning, I will summarize the JavaScript into two most important concepts that are used in browser.
+While there are many different aspects of JavaScript that is worth mentioning, I want to summarize the JavaScript into two most important concepts that are used in browser.
 
 1. Dom selector API
 2. Callback/promise
 
 ### Dom Selector API
 
-In JavaScript, each node in browser is a document object model (DOM). You can do a lot of different things with this DOM element such as adding on click event listener.
+In JavaScript, each node in browser is a document object model (DOM). You can do many different things with this DOM element such as adding on a click event listener or even to change the attributes of node.
 
 But you have to know how DOM selector works before you can start to use this DOM element in JavaScript.
 
-In a nutshell, DOM selector API is very close to how CSS selector works. In this level of class, I'm expecting you guys to know the CSS selector by now. If you don't know how CSS selector works or require a review on the CSS selector. Please review [this site](https://css-tricks.com/how-css-selectors-work/)
+In a nutshell, DOM selector API is very close to how CSS selector works. In this level of class, I'm expecting students to know the CSS selector. If you don't know how CSS selector works or require a review on the subject of CSS selector. Please review [this site](https://css-tricks.com/how-css-selectors-work/)
 
-I can hear the cynics.
+BUT! I can hear the cynics.
 
-> Why don't we just use jQuery!? It's easier this way. Just `$` everything and we are good to go! You know I can use jQuery to do various amazing things with `$`!
+> Why don't we just use jQuery!? It's easier this way. Just `$` everything and we are good to go!
 
 To that, I present you this graph.
 
 ![Just use jQuery for everything](imgs/bad_jquery.gif)
 
-Please! Native JavaScript API has gone way much better than 10 years ago. Unless you have to support IE6 or something. You don't really need jQuery anymore. You don't!
+Please! Native JavaScript API has gone way much better in last 5 years. Unless you have to support IE6 or something legacy like that. You don't really jQuery. You don't!
 
 In example, you can do the DOM selector API via `document.querySelector('#id .class')` and it works the same way as the jQuery `$('#id .class')` with better performance and one less library for you to rely on.
 
@@ -175,9 +194,9 @@ In short, learn native JavaScript API. They are amazing. And if you need to look
 
 ### Callback
 
-In JavaScript, browser only have one thread for the display. This is why most JavaScript codes are all asynchronous functions.
+In JavaScript, it only have one thread for the display. This is why most JavaScript codes are all asynchronous functions.
 
-This is probably by far the most important gotcha for Java developers to learn JavaScript.
+This is probably by far the most important gotcha for Java developers to get into JavaScript.
 
 What is asynchronous? You asked.
 
@@ -240,9 +259,11 @@ a(b)(c);
 console.log('and we are done???');
 ```
 
+In summary, when the method doesn't get executed in the order you want. Please be aware that method can be asynchronous and you will need to do callback function.
+
 ## D3 (Data Driver Document)
 
-Once you understand above two concepts, you are now ready to move onto the D3 part.
+Once you understand above two concepts (especially on the DOM selector part), you are now ready to move onto the D3 part.
 
 So what is different from D3 and native JavaScript API?
 
@@ -361,13 +382,21 @@ To make more power to the data scientist and to be able to build quite high qual
 
 Recall earlier architecture graph:
 
-![imgs/project_architecture.png]
+![Project architecture](imgs/project_architecture.png)
 
 In this graph, visualization will need to make AJAX request to the server to grab data from server.
 
 But in this class, since we are using ElasticSearch, we can simply use the ElasticSearch client to query data directly from ElasticSearch without us building any sort of web server.
 
+To show a demonstration, open up visualization/chart.js/with-elastic.html
 
+> Note that you will have to run `npm install` first to install required dependencies.
+
+## Summary
+
+From here we have learned how to use graphing library to visualize.
+
+It is your job to put together graphs into an HTML page for your final project that talks to ElasticSearch.
 
 ## Objectives
 
@@ -375,7 +404,6 @@ But in this class, since we are using ElasticSearch, we can simply use the Elast
   * Bar chart, pie chart, line chart, heap map, geo map ... etc
 * Basic JavaScript, HTML and CSS review
 * D3
-* Python chart
 
 ## Metrics
 
