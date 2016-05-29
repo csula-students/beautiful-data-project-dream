@@ -398,6 +398,8 @@ From here we have learned how to use graphing library to visualize.
 
 It is your job to put together graphs into an HTML page for your final project that talks to ElasticSearch.
 
+Further reading: https://www.elastic.co/blog/data-visualization-elasticsearch-aggregations
+
 ## Objectives
 
 * Basic chart types
