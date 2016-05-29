@@ -333,13 +333,41 @@ e.g. you may have a data of domain from -46 to 32. This is extremely hard to gra
 
 ### Example coding
 
-Check d3/examples/basic.html
+Check visualizations/d3/basic.html
 
 ### Code a barchart
 
 https://bost.ocks.org/mike/bar/
 
 As reference, we are going to learn how to create a barchart in D3.
+
+Check visualizations/d3/barchart.html
+
+## The need for higher level library
+
+Combine above examples, you start to see D3 code can slowly get more and more complex since it is, in my opinion, very low level implementaion.
+
+Therefore, for the scope of this class, we will pick some higher level library like Chart.js to do our visualization.
+
+Example of Chart.js
+
+Check visualizations/chart.js/index.html
+
+## Communicating to Server (ElasticSearch)
+
+In traditional architecture, your visualization will be communicating to a web server (built by some developer).
+
+To make more power to the data scientist and to be able to build quite high quality product at the end of this quarter. We decide to use ElasticSearch to replace the traditional web server layer.
+
+Recall earlier architecture graph:
+
+![imgs/project_architecture.png]
+
+In this graph, visualization will need to make AJAX request to the server to grab data from server.
+
+But in this class, since we are using ElasticSearch, we can simply use the ElasticSearch client to query data directly from ElasticSearch without us building any sort of web server.
+
+
 
 ## Objectives
 
