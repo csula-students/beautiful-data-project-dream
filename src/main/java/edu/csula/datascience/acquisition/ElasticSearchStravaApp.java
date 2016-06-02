@@ -1,6 +1,7 @@
 package edu.csula.datascience.acquisition;
 
 import com.google.gson.Gson;
+import com.mongodb.BasicDBObject;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.elasticsearch.action.bulk.BackoffPolicy;
@@ -107,8 +108,41 @@ public class ElasticSearchStravaApp {
 
         try (MongoCursor<Document> cursor = collection.find().iterator()) {
             while (cursor.hasNext()) {
+
+                Document obj = cursor.next();
+
+                Activities act = new Activities(
+                        obj.getInteger("id"),
+                        obj.getInteger("athlete_id"),
+                        obj.getString("athlete_name"),
+                        obj.getString("athlete_city"),
+                        obj.getString("athlete_state"),
+                        obj.getString("athlete_country"),
+                        obj.getString("athlete_sex"),
+                        obj.getDouble("distance_miles"),
+                        obj.getInteger("moving_time_s"),
+                        obj.getInteger("elapsed_time_s"),
+                        obj.getDouble("total_elevation_gain_f"),
+                        obj.getString("type"),
+                        obj.getString("start_date"),
+                        obj.getString("timezone"),
+                        obj.getInteger("achievement_count"),
+                        obj.getInteger("kudos_count"),
+                        obj.getInteger("comment_count"),
+                        obj.getInteger("athlete_count"),
+                        obj.getInteger("photo_count"),
+                        obj.getBoolean("commute"),
+                        obj.getBoolean("manual"),
+                        obj.getDouble("average_speed_mpers"),
+                        obj.getDouble("max_speed_mpers"),
+                        obj.getDouble("start_lat"),
+                        obj.getDouble("start_lng"),
+                        obj.getDouble("end_lat"),
+                        obj.getDouble("end_lng"));
+
+
                 bulkProcessor.add(new IndexRequest(indexName, typeName)
-                        .source(cursor.next().toJson())
+                        .source(gson.toJson(act))
                 );
             }
         }
@@ -166,17 +200,195 @@ public class ElasticSearchStravaApp {
     }
 
     static class Activities {
+        final Integer id;
+        final Integer athlete_id;
+        final String athlete_name;
+        final String athlete_city;
+        final String athlete_state;
+        final String athlete_country;
+        final String athlete_sex;
+        final double distance_miles;
+        final Integer moving_time_s;
+        final Integer elapsed_time_s;
+        final double total_elevation_gain_f;
+        final String type;
+        final String start_date;
+        final String timezone;
+        final Integer achievement_count;
+        final Integer kudos_count;
+        final Integer comment_count;
+        final Integer athlete_count;
+        final Integer photo_count;
+        final Boolean commute;
+        final Boolean manual;
+        final double average_speed_mpers;
+        final double max_speed_mpers;
+        final double start_lat;
+        final double start_lng;
+        final double end_lat;
+        final double end_lng;
 
-        final String date;
-        final double averageTemperature;
-        final String state;
-        final String country;
+        public Activities(Integer id, Integer athlete_id,
+                          String athlete_name,
+                          String athlete_city,
+                          String athlete_state,
+                          String athlete_country,
+                          String athlete_sex,
+                          double distance_miles,
+                          Integer moving_time_s,
+                          Integer elapsed_time_s,
+                          double total_elevation_gain_f,
+                          String type,
+                          String start_date,
+                          String timezone,
+                          Integer achievement_count,
+                          Integer kudos_count,
+                          Integer comment_count,
+                          Integer athlete_count,
+                          Integer photo_count,
+                          Boolean commute,
+                          Boolean manual,
+                          double average_speed_mpers,
+                          double max_speed_mpers,
+                          double start_lat,
+                          double start_lng,
+                          double end_lat,
+                          double end_lng) {
+            this.id = id;
+            this.athlete_id = athlete_id;
+            this.athlete_name = athlete_name;
+            this.athlete_city = athlete_city;
+            this.athlete_state = athlete_state;
+            this.athlete_country = athlete_country;
+            this.athlete_sex = athlete_sex;
+            this.distance_miles = distance_miles;
+            this.moving_time_s = moving_time_s;
+            this.elapsed_time_s = elapsed_time_s;
+            this.total_elevation_gain_f = total_elevation_gain_f;
+            this.type = type;
+            this.start_date = start_date;
+            this.timezone = timezone;
+            this.achievement_count = achievement_count;
+            this.kudos_count = kudos_count;
+            this.comment_count = comment_count;
+            this.athlete_count = athlete_count;
+            this.photo_count = photo_count;
+            this.commute = commute;
+            this.manual = manual;
+            this.average_speed_mpers = average_speed_mpers;
+            this.max_speed_mpers = max_speed_mpers;
+            this.start_lat = start_lat;
+            this.start_lng = start_lng;
+            this.end_lat = end_lat;
+            this.end_lng = end_lng;
+        }
 
-        public Temperature(String date, double averageTemperature, String state, String country) {
-            this.date = date;
-            this.averageTemperature = averageTemperature;
-            this.state = state;
-            this.country = country;
+        public Integer getId() {
+            return id;
+        }
+
+        public Integer getAthlete_id() {
+            return athlete_id;
+        }
+
+        public String getAthlete_name() {
+            return athlete_name;
+        }
+
+        public String getAthlete_city() {
+            return athlete_city;
+        }
+
+        public String getAthlete_state() {
+            return athlete_state;
+        }
+
+        public String getAthlete_country() {
+            return athlete_country;
+        }
+
+        public String getAthlete_sex() {
+            return athlete_sex;
+        }
+
+        public double getDistance_miles() {
+            return distance_miles;
+        }
+
+        public Integer getMoving_time_s() {
+            return moving_time_s;
+        }
+
+        public Integer getElapsed_time_s() {
+            return elapsed_time_s;
+        }
+
+        public double getTotal_elevation_gain_f() {
+            return total_elevation_gain_f;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public String getStart_date() {
+            return start_date;
+        }
+
+        public String getTimezone() {
+            return timezone;
+        }
+
+        public Integer getAchievement_count() {
+            return achievement_count;
+        }
+
+        public Integer getKudos_count() {
+            return kudos_count;
+        }
+
+        public Integer getComment_count() {
+            return comment_count;
+        }
+
+        public Integer getAthlete_count() {
+            return athlete_count;
+        }
+
+        public Integer getPhoto_count() {
+            return photo_count;
+        }
+
+        public Boolean getCommute() {
+            return commute;
+        }
+
+        public Boolean getManual() {
+            return manual;
+        }
+
+        public double getAverage_speed_mpers() {
+            return average_speed_mpers;
+        }
+
+        public double getMax_speed_mpers() {
+            return max_speed_mpers;
+        }
+
+        public double getStart_lat() {
+            return start_lat;
+        }
+
+        public double getStart_lng() {
+            return start_lng;
+        }
+
+        public double getEnd_lat() {
+            return end_lat;
+        }
+
+        public double getEnd_lng() {
+            return end_lng;
         }
     }
 }

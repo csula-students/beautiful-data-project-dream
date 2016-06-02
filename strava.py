@@ -14,6 +14,11 @@ client = Client(access_token='5fc432d82f7568743ee57be5eef08c0e1eeb6182', rate_li
 mongo = MongoClient()
 db = mongo.strava
 
+# Commands to setup mongo within the cli:
+# use strava
+# db.createCollection("activities")
+# db.activities.createIndex( { id: 1 } )
+
 #access_token = client.exchange_code_for_token(client_id=11245,
                                               #client_secret='752834d5dd91633194a8a97ad4af594594ea11e0',
                                               #code='33da4461dcb4e76c312b24f47c731a3956f1d469')
