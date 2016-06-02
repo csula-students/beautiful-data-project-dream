@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chart.js example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+</head>
+<body>
+  <canvas id="temperatureChart" width="800" height="600"></canvas>
+  
+  <script>
+  var temperatureData = [];
+  for (var i = 1980; i < 2016; i ++) {
+    temperatureData.push({
+      year: i,
+      averageTempurature: Math.random() * 80 - 40
+    });
+  }
+  console.log(temperatureData);
+  var ctx = document.getElementById("temperatureChart");
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: temperatureData.map(temp => temp.year),
+        datasets: [{
+          backgroundColor: "#2196F3",
+          borderColor: "#2979FF",
+          borderWidth: 1,
+          hoverBackgroundColor: "#64B5F6",
+          hoverBorderColor: "#82B1FF",
+          label: 'Year',
+          data: temperatureData.map(temp => temp.averageTempurature)
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+  });
+  </script>
+</body>
+</html>

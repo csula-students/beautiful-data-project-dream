@@ -36,6 +36,7 @@ dependencies {
   compile 'org.elasticsearch:elasticsearch:2.2.0'
   compile 'com.google.code.gson:gson:2.6.2'
   compile 'org.apache.commons:commons-csv:1.2'
+  compile group: 'io.searchbox', name: 'jest', version: '2.0.2'
   compile 'com.github.danshannon:javastrava-api:1.0.1'
 
   testCompile group: 'junit', name: 'junit', version: '4.11'
@@ -59,6 +60,24 @@ task acquireTwitter(type: JavaExec) {
   main = 'edu.csula.datascience.acquisition.TwitterCollectorApp'
 }
 
+task esExample(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'edu.csula.datascience.examples.ElasticSearchExampleApp'
+}
+
+task esQuiz(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'edu.csula.datascience.examples.QuizESApp'
+}
+
+task remoteEs(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'edu.csula.datascience.examples.JestExampleApp'
+}
+
 task strava(type: JavaExec) {
   classpath = sourceSets.main.runtimeClasspath
 
@@ -66,5 +85,5 @@ task strava(type: JavaExec) {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.12'
+  gradleVersion = '2.0'
 }

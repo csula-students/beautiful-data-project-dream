@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chart.js with ElasticSearch.js</title>
+  <script src="node_modules/chart.js/dist/Chart.js"></script>
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/elasticsearch-browser/elasticsearch.angular.js"></script>
+</head>
+<body>
+  <section ng-app="ExampleApp" ng-controller="ExampleController">
+    <canvas id="temperatureChart" width="800" height="600"></canvas>
+  </section>
+  
+  <script>
+  // App module
+  //
+  // The app module will contain all of the components the app needs (directives,
+  // controllers, services, etc.). Since it will be using the components within
+  // the elasticsearch module, define it a dependency.
+  var ExampleApp = angular.module('ExampleApp', ['elasticsearch']);
+  // Service
+  //
+  // esFactory() creates a configured client instance. Turn that instance
+  // into a service so that it can be required by other parts of the application
+  ExampleApp.service('client', function (esFactory) {
+    return esFactory({
+      host: 'http://search-csula-data-science-3e3laaeq7tga6427uq7irs4bki.us-west-2.es.amazonaws.com',
+      sniffOnStart: true,
+      sniffInterval: 60000,
+      apiVersion: '2.3',
+      log: 'trace'
+    });
+  });
+  // Controller
+  //
+  // It requires the "client" service, and fetches information about the server,
+  // it adds either an error or info about the server to $scope.
+  //
+  // It also requires the esFactory to that it can check for a specific type of
+  // error which might come back from the client
+  ExampleApp.controller('ExampleController', function ($scope, client, esFactory) {
+    client.search({
+      index: 'bd-data',
+      body: {
+        aggs: {
+          yearly_data: {
+            date_histogram : {
+              field: "date",
+              interval: "1y"
+            },
+            aggs: {
+              averageTemperature: {
+                avg: {
+                  field: "averageTemperature"
+                }
+              }
+            }
+          }
+        }
+      }
+    })
+    .then(resp => {
+      console.log(resp);
+      var data = [];
+      resp.aggregations['yearly_data']
+        .buckets
+        .forEach(yearlyData => {
+          data.push({
+            year: yearlyData.key_as_string.substring(0, 5),
+            averageTempurature: yearlyData.averageTemperature.value
+          });
+        });
+      graph(data);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  });
+  /**
+   * Graph the data into temperaureChart using Chart.js
+   */
+  function graph(data) {
+    var ctx = document.getElementById("temperatureChart");
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: data.map(temp => temp.year),
+          datasets: [{
+            backgroundColor: "#2196F3",
+            borderColor: "#2979FF",
+            borderWidth: 1,
+            hoverBackgroundColor: "#64B5F6",
+            hoverBorderColor: "#82B1FF",
+            label: 'Year',
+            data: data.map(temp => temp.averageTempurature)
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+    });
+  }
+  </script>
+</body>
+</html>
