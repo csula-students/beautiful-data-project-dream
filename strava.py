@@ -61,6 +61,8 @@ for segment in segments:
             'start_lng' : a.start_latlng[1],
             'end_lat' : a.end_latlng[0],
             'end_lng' : a.end_latlng[1]
+            'map_id' : a.map.id
+            'map_summary_polyline' : a.map.summary_polyline
         }
 
         print data

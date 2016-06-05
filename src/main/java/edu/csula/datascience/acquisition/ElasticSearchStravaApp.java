@@ -57,6 +57,10 @@ public class ElasticSearchStravaApp {
     private final static String typeName = "activities";
 
     public static void main(String[] args) throws URISyntaxException, IOException {
+        MongoClient mongoClient = new MongoClient();
+        MongoDatabase database = mongoClient.getDatabase("strava");
+        MongoCollection<Document> collection = database.getCollection("activities");
+
         Node node = nodeBuilder().settings(Settings.builder()
                 .put("cluster.name", "jaime")
                 .put("path.home", "elasticsearch-data")).node();
@@ -102,10 +106,6 @@ public class ElasticSearchStravaApp {
         // Gson library for sending json to elastic search
         Gson gson = new Gson();
 
-        MongoClient mongoClient = new MongoClient();
-        MongoDatabase database = mongoClient.getDatabase("strava");
-        MongoCollection<Document> collection = database.getCollection("activities");
-
         try (MongoCursor<Document> cursor = collection.find().iterator()) {
             while (cursor.hasNext()) {
 
@@ -146,57 +146,6 @@ public class ElasticSearchStravaApp {
                 );
             }
         }
-
-
-        /**
-         * Structured search
-         */
-
-        // simple search by field name "state" and find Washington
-//        SearchResponse response = client.prepareSearch(indexName)
-//            .setTypes(typeName)
-//            .setSearchType(SearchType.DEFAULT)
-//            .setQuery(QueryBuilders.matchQuery("state", "Washington"))   // Query
-//            .setScroll(new TimeValue(60000))
-//            .setSize(60).setExplain(true)
-//            .execute()
-//            .actionGet();
-//
-//        //Scroll until no hits are returned
-//        while (true) {
-//
-//            for (SearchHit hit : response.getHits().getHits()) {
-//                System.out.println(hit.sourceAsString());
-//            }
-//            response = client
-//                .prepareSearchScroll(response.getScrollId())
-//                .setScroll(new TimeValue(60000))
-//                .execute()
-//                .actionGet();
-//            //Break condition: No hits are returned
-//            if (response.getHits().getHits().length == 0) {
-//                break;
-//            }
-//        }
-//
-//        /**
-//         * AGGREGATION
-//         */
-//        SearchResponse sr = node.client().prepareSearch(indexName)
-//            .setTypes(typeName)
-//            .setQuery(QueryBuilders.matchAllQuery())
-//            .addAggregation(
-//                AggregationBuilders.terms("stateAgg").field("state")
-//                    .size(Integer.MAX_VALUE)
-//            )
-//            .execute().actionGet();
-//
-//        // Get your facet results
-//        Terms agg1 = sr.getAggregations().get("stateAgg");
-//
-//        for (Terms.Bucket bucket: agg1.getBuckets()) {
-//            System.out.println(bucket.getKey() + ": " + bucket.getDocCount());
-//        }
     }
 
     static class Activities {
