@@ -7,8 +7,9 @@ from pymongo import MongoClient
 from pymongo import errors
 import requests_cache
 import simplejson as json
+import polyline
 
-requests_cache.install_cache('strava_cache', backend='sqlite', expire_after=600)
+requests_cache.install_cache('strava_cache', backend='sqlite', expire_after=3600)
 
 client = Client(access_token='5fc432d82f7568743ee57be5eef08c0e1eeb6182', rate_limiter=limiter.DefaultRateLimiter())
 mongo = MongoClient()
@@ -30,8 +31,14 @@ segments = client.explore_segments([34.0411, -118.2467, 34.0527, -118.2279])
 for segment in segments:
     efforts = client.get_segment_efforts(segment_id=segment.id)
     for s in efforts:
+        # Skip activities already in the mongo
+        if (db.activities.find({ "id" : s.activity.id}).limit(1).count(True) == 1) :
+            continue
+
         a = client.get_activity(s.activity.id)
         athlete = client.get_athlete(a.athlete.id)
+
+        poly = polyline.decode(a.map.summary_polyline)
 
         data = {
             'athlete_id' : athlete.id,
@@ -57,11 +64,11 @@ for segment in segments:
             'manual' : a.manual,
             'average_speed_mpers' : float(a.average_speed),
             'max_speed_mpers' : float(a.max_speed),
-            'start_lat' : a.start_latlng[0],
-            'start_lng' : a.start_latlng[1],
-            'end_lat' : a.end_latlng[0],
-            'end_lng' : a.end_latlng[1]
-            'map_id' : a.map.id
+            'start_lat' : poly[0][0],
+            'start_lng' : poly[0][1],
+            'end_lat' : poly[len(poly)-1][0],
+            'end_lng' : poly[len(poly)-1][1],
+            'map_id' : a.map.id,
             'map_summary_polyline' : a.map.summary_polyline
         }
 
