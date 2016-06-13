@@ -8,6 +8,7 @@ import org.elasticsearch.action.bulk.BackoffPolicy;
 import org.elasticsearch.action.bulk.BulkProcessor;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.fieldstats.FieldStats;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
@@ -138,7 +139,11 @@ public class ElasticSearchStravaApp {
                         obj.getDouble("start_lat"),
                         obj.getDouble("start_lng"),
                         obj.getDouble("end_lat"),
-                        obj.getDouble("end_lng"));
+                        obj.getDouble("end_lng"),
+                        (List<Double>)obj.get("start_latlng"),
+                        (List<Double>)obj.get("end_latlng"),
+                        obj.getString("map_id"),
+                        obj.getString("map_summary_polyline"));
 
 
                 bulkProcessor.add(new IndexRequest(indexName, typeName)
@@ -176,6 +181,10 @@ public class ElasticSearchStravaApp {
         final double start_lng;
         final double end_lat;
         final double end_lng;
+        final List<Double> start_latlng;
+        final List<Double> end_latlng;
+        final String map_id;
+        final String map_summary_polyline;
 
         public Activities(Integer id, Integer athlete_id,
                           String athlete_name,
@@ -202,7 +211,11 @@ public class ElasticSearchStravaApp {
                           double start_lat,
                           double start_lng,
                           double end_lat,
-                          double end_lng) {
+                          double end_lng,
+                          List<Double> start_latlng,
+                          List<Double> end_latlng,
+                          String map_id,
+                          String map_summary_polyline) {
             this.id = id;
             this.athlete_id = athlete_id;
             this.athlete_name = athlete_name;
@@ -230,6 +243,10 @@ public class ElasticSearchStravaApp {
             this.start_lng = start_lng;
             this.end_lat = end_lat;
             this.end_lng = end_lng;
+            this.start_latlng = start_latlng;
+            this.end_latlng = end_latlng;
+            this.map_id = map_id;
+            this.map_summary_polyline = map_summary_polyline;
         }
 
         public Integer getId() {
@@ -338,6 +355,14 @@ public class ElasticSearchStravaApp {
 
         public double getEnd_lng() {
             return end_lng;
+        }
+
+        public String getMap_id() {
+            return map_id;
+        }
+
+        public String getMap_summary_polyline() {
+            return map_summary_polyline;
         }
     }
 }
