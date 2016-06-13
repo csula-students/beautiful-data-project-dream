@@ -27,7 +27,16 @@ db = mongo.strava
 #client.access_token = access_token
 # Angel City Brewery
 #34.0411/-118.2467 34.0527/-118.2279
-segments = client.explore_segments([34.0411, -118.2467, 34.0527, -118.2279])
+
+# Eagle Rock Brewery
+# 34.102241, -118.262310 SW   34.126704, -118.224544 NE
+
+#Monkish Brewing
+#33.833521, -118.330183 SW 33.858043, -118.291730
+
+#El Segundo Brewery
+# 33.904230, -118.431691 SW 33.926931, -118.397446 NE
+segments = client.explore_segments([33.904230, -118.431691, 33.926931, -118.397446])
 for segment in segments:
     efforts = client.get_segment_efforts(segment_id=segment.id)
     for s in efforts:
@@ -88,3 +97,4 @@ for segment in segments:
 #athlete
 
 #    The associated stravalib.model.Athlete that performed this activity.
+
