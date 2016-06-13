@@ -84,6 +84,12 @@ task strava(type: JavaExec) {
   main = 'edu.csula.datascience.acquisition.StravaApp'
 }
 
+task stravaES(type: JavaExec) {
+  classpath = sourceSets.main.runtimeClasspath
+
+  main = 'edu.csula.datascience.acquisition.ElasticSearchStravaApp'
+}
+
 task wrapper(type: Wrapper) {
   gradleVersion = '2.0'
 }
